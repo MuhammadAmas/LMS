@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -41,6 +40,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
