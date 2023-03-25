@@ -11,13 +11,12 @@ import {
   LogIn,
 } from "./Components";
 import "./App.css";
-// import { SignUp } from './Components/SignUp/SignUp';
 
 export default function App() {
   return (
     <div className="#">
       <CssBaseline />
-      <NavBar />
+      {/* <NavBar /> */}
 
       <main className="#">
         <div className="#" />
