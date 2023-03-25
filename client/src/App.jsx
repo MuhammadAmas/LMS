@@ -19,11 +19,11 @@ export default function App() {
       <CssBaseline />
       <NavBar />
 
-      <LogIn />
       <main className="#">
         <div className="#" />
         <Routes>
           <Route path="/SignUp" element={<SignUp />}/>
+          <Route path="/LogIn" element={<LogIn />}/>
           <Route exact path="/student/:id" element={<Student />} />
           <Route exact path="/teacher/:id" element={<Teacher />} />
           <Route exact path="/" element={<Lms />} />
