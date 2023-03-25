@@ -1,17 +1,3 @@
-// import React from 'react';
-
-// export default function NavBar() {
-//     console.log('Navbar');
-
-//     return (
-//         <div className="nav-bar">
-//             <h4>Acadoom</h4>
-//             <search></search>
-//         <notification></notification>
-//         <profile></profile>
-//         </div>
-//     );
-// }
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -41,7 +27,7 @@ const Search = styled("div")(({ theme }) => ({
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
+    marginLeft: theme.spacing(50),
     width: "auto",
   },
 }));
@@ -54,6 +40,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
