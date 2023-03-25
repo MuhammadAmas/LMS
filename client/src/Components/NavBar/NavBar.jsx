@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> b45a243f115e5392979d004f9b69118708f5a937
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -31,11 +27,7 @@ const Search = styled("div")(({ theme }) => ({
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-<<<<<<< HEAD
-    marginLeft: theme.spacing(50),
-=======
     marginLeft: theme.spacing(33),
->>>>>>> b45a243f115e5392979d004f9b69118708f5a937
     width: "auto",
   },
 }));
