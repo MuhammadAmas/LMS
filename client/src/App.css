@@ -1,6 +1,9 @@
-.nav-bar {
-    background-color: #877bca;
-    color: #fff;
-    padding: 10px;
-    width: 100%;
+:root{
+    --lightBlue: #0D0D6D;
+    --darkBlue: #070439;
+    --lightTeal: #E6F9FA;
+    --lightBlueLight: #B3E5FC;
+    --lightOrange: #FFE6B3;
+    --lightBlue: #E6F9FA;
+    --lightPink: #FFE6B3;
 }
