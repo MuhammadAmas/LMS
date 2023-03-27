@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "../NavBar/NavBar";
+import LPNav from "./LPNav.jsx";
 
 export default function Lms() {
   return (
     <main>
-      <NavBar />
+      <LPNav />
 
       <div className="wlc">
         <h1>Welcome to Acadoom</h1>
