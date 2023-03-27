@@ -5,7 +5,7 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 
 function SignUp() {
   return (
-    <form className="form_container">
+    <form className="form_container" style={{margin: "5em auto"}}>
       <div className="logo_container" />
       <div className="title_container">
         <p className="title">Register your Account</p>
