@@ -1,17 +1,3 @@
-// import React from 'react';
-
-// export default function NavBar() {
-//     console.log('Navbar');
-
-//     return (
-//         <div className="nav-bar">
-//             <h4>Acadoom</h4>
-//             <search></search>
-//         <notification></notification>
-//         <profile></profile>
-//         </div>
-//     );
-// }
 import * as React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -41,7 +27,7 @@ const Search = styled("div")(({ theme }) => ({
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
+    marginLeft: theme.spacing(33),
     width: "auto",
   },
 }));
@@ -54,6 +40,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -113,6 +100,7 @@ export default function NavBar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
     </Menu>
   );
 
@@ -169,10 +157,10 @@ export default function NavBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1 }} >
+      <AppBar position="static" color="primary" style={{ backgroundColor: '#0D0D6D' }}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -180,14 +168,14 @@ export default function NavBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            Acadoom
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -200,7 +188,7 @@ export default function NavBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
@@ -208,13 +196,13 @@ export default function NavBar() {
               <Badge badgeContent={4} color="error">
                 <MailIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
             <IconButton
               size="large"
-              aria-label="show 17 new notifications"
+              aria-label="show 5 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={0} color="error">
+              <Badge badgeContent={5} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
