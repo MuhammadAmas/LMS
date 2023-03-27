@@ -8,7 +8,7 @@ import {
   NavBar,
   Profile,
   SignUp,
-  LogIn,
+  SignIn,
 } from "./Components";
 import "./App.css";
 
@@ -21,8 +21,8 @@ export default function App() {
       <main className="#">
         <div className="#" />
         <Routes>
-          <Route path="/SignUp" element={<SignUp />}/>
-          <Route path="/LogIn" element={<LogIn />}/>
+          <Route path="/signUp" element={<SignUp />}/>
+          <Route path="/signIn" element={<SignIn />}/>
           <Route exact path="/student/:id" element={<Student />} />
           <Route exact path="/teacher/:id" element={<Teacher />} />
           <Route exact path="/" element={<Lms />} />
