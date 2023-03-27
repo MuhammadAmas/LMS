@@ -42,7 +42,7 @@ function SignUp() {
           name="input-name"
           type="text"
           className="input_field"
-          id="email_field"
+          id="user_name"
         ></input>
       </div>
       {/* Email */}
