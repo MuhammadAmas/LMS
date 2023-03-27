@@ -7,6 +7,8 @@ import {
   Lms,
   NavBar,
   Profile,
+  SignUp,
+  LogIn,
 } from "./Components";
 import "./App.css";
 
