@@ -5,7 +5,6 @@ export default function Lms() {
   return (
     <main>
       <NavBar />
-
       <div className="wlc">
         <h1>Welcome to Acadoom</h1>
         <p>
