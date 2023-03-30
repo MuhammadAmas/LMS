@@ -1,8 +1,22 @@
 .partner-container {
     background-color: wheat;
-    max-width: 50%;
+    max-width: 70%;
     background-color: wheat;
     padding-left: 40px;
     margin: 0 auto;
     padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Karla';
+    text-align: center;
+}
+
+.font>a {
+    font-size: 40px;
+    /* display: flex; */
+    color: black;
+    margin: 9%;
 }

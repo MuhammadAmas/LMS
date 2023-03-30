@@ -12,9 +12,7 @@
     text-align: center;
 }
 
-.list {
-    font-size: 18px;
-}
+
 
 ul {
     font-family: 'karla';
@@ -30,11 +28,11 @@ li {
     font-weight: 700;
     margin-bottom: 10px;
     /* add some spacing between list items */
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
 }
 
 li::marker {
-    color: purple;
+    color: #090979;
     font-size: 1rem;
 }
