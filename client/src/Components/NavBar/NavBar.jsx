@@ -175,7 +175,7 @@ export default function NavBar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            Acadoom
+            Acadist
           </Typography>
           <Search>
             <SearchIconWrapper>

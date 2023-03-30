@@ -12,6 +12,7 @@ import {
 } from "./Components";
 import "./App.css";
 
+
 export default function App() {
   return (
     <div className="#">
@@ -21,8 +22,8 @@ export default function App() {
       <main className="#">
         <div className="#" />
         <Routes>
-          <Route path="/signUp" element={<SignUp />}/>
-          <Route path="/signIn" element={<SignIn />}/>
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signIn" element={<SignIn />} />
           <Route exact path="/student/:id" element={<Student />} />
           <Route exact path="/teacher/:id" element={<Teacher />} />
           <Route exact path="/" element={<Lms />} />
