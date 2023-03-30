@@ -9,7 +9,7 @@ import "./Lms.css"
 
 export default function Lms() {
   return (
-    <>
+    <div className="lms">
       <LPNav />
       <Hero />
       <Divider variant="middle" />
@@ -17,7 +17,7 @@ export default function Lms() {
       <Divider variant="middle" />
       <Partner />
       <Footer />
-    </>
+    </div>
 
   );
 }

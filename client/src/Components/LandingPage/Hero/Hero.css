@@ -1,8 +1,6 @@
 .hero-container {
     display: flex;
     justify-content: space-between;
-
-    background-color: wheat;
     max-width: 80%;
     margin: 0 auto;
 }
@@ -38,26 +36,26 @@
 }
 
 .buttons {
-    padding: 40px;
+    /* padding: 40px; */
     display: flex;
     justify-content: space-evenly;
     gap: 0.5em;
 }
 
 .btn1 {
-    background-color: purple;
+    background-color: var(--darkBlue);
     color: white;
     text-transform: uppercase;
     text-decoration: none;
-    border: 2px solid purple;
-    padding: 10px 20px;
+    border: 2px solid var(--darkBlue);
+    outline: none;
+    padding: 14px;
     font-size: 17px;
     font-weight: bold;
-    position: relative;
     transition: all 1s;
     overflow: hidden;
     border-radius: 6px;
-    width: 260px;
+    
 }
 
 .btn1:hover {
@@ -84,21 +82,20 @@
 .btn2 {
     color: purple;
     text-transform: uppercase;
+    text-transform: uppercase;
     text-decoration: none;
-    border: 2px solid purple;
-    padding: 10px 20px;
+    border: 2px solid var(--darkBlue);
+    color: var(--darkBlue);
+    padding: 14px;
     font-size: 17px;
     font-weight: bold;
-    background: transparent;
-    position: relative;
     transition: all 1s;
-    overflow: hidden;
     border-radius: 6px;
-    width: 260px;
 }
 
 .btn2:hover {
-    color: white;
+    color: var(--darkBlue);
+    background-color: black;
 }
 
 .btn2::before {
@@ -109,7 +106,7 @@
     top: 0;
     left: -40px;
     transform: skewX(45deg);
-    background-color: purple;
+    background-color: pink;
     z-index: -1;
     transition: all 1s;
 }
