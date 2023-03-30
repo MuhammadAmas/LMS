@@ -2,13 +2,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(90deg, #141E30 1.18%, #243b55 100%);
+    /* background: linear-gradient(90deg, #141E30 1.18%, #243b55 100%); */
+    background-color: var(--darkBlue);
     height: 70px;
     padding: 30px 25px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
     z-index: 1;
-    margin: 1.5em 3em;
-    border-radius: 5px;
+    position: fixed;
+    width: 100%;
 }
 
 .nav-title {
@@ -37,7 +38,9 @@ nav {
     font-family: 'Times New Roman', Times, serif;
     color: black;
     z-index: 1;
-
+    background-color: #fff;
+    color: var(--darkBlue);
+    font-weight: 600;
 }
 
 .button:before {
@@ -63,7 +66,7 @@ nav {
     top: 180%;
     width: 160%;
     height: 190%;
-    background-color: #39bda7;
+    background-color: var(--lightBlue);
     border-radius: 50%;
     display: block;
     transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
