@@ -6,6 +6,7 @@ import Divider from '@mui/material/Divider';
 import Hero from "/Assets/Hero.png"
 import "./Lms.css"
 import Footer from "./Footer/Footer.jsx";
+// import BackgroundAnimations from "../Background Animations/BackgroundAnimations.jsx";
 
 export default function Lms() {
   return (
@@ -51,7 +52,8 @@ export default function Lms() {
       <div className="partner-container">
         <h2>Partners</h2>
       </div>
-      <Footer/>
+      <Footer />
+
     </main>
   );
 }
