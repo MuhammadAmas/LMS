@@ -9,7 +9,7 @@
 .what-text {
     font-size: 50px;
     font-weight: 700;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Karla';
     text-align: center;
 }
 
@@ -18,7 +18,7 @@
 }
 
 ul {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'karla';
     list-style: disc;
     padding: 0;
     margin: 0 auto;
