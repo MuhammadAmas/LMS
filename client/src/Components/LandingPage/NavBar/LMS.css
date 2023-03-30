@@ -1,0 +1,13 @@
+.welcome-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    color: red !important;
+    background-color: pink !important;
+    margin: 13em;
+}
+
+.welcome img{
+    max-width: 400px;
+}
