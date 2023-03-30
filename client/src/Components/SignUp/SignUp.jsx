@@ -40,8 +40,8 @@ export default function SignUp() {
 
   return (
     <div style={{
-      width: "fit-content",
-      height: "fit-content",
+      width: "500px",
+      height: "600px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
