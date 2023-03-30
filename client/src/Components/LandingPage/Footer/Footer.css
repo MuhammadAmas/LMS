@@ -1,7 +1,7 @@
 footer {
     padding: 6em 1em;
-    background-color: #070439;
-    color: #fff;
+    background-color: wheat;
+    color: black;
     justify-content: space-between;
 }
 
@@ -85,7 +85,7 @@ footer {
 
 .footer-content a:hover,
 .email-icon i:hover {
-    color: #3065f8;
+    color: red;
 }
 
 
