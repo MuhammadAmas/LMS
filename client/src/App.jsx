@@ -15,7 +15,7 @@ import "./App.css";
 
 export default function App() {
   return (
-    <div className="#">
+    <div className="app">
       <CssBaseline />
       {/* <NavBar /> */}
 

@@ -1,11 +1,15 @@
 import React from 'react';
+import BackgroundAnimations from '../Background Animations/BackgroundAnimations';
+import SignUp from '../SignUp/SignUp';
 
 export default function Student() {
-    console.log('Student');
 
     return (
-        <div>
-            <h1>Student</h1>
+        <div >
+            <BackgroundAnimations />
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0}}>
+                <SignUp />
+            </div>
         </div>
     );
 }

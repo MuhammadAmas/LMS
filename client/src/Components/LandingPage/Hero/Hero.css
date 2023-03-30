@@ -1,0 +1,70 @@
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.hero-text {
+    font-weight: 700;
+    font-size: 55px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.hero-wrapper {
+    padding-left: 40px;
+    padding-top: 90px;
+}
+
+.hero-image {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.hero-image-container {
+    padding-right: 60px;
+    padding-top: 70px;
+}
+
+.hero-tag {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5em;
+}
+
+.btn1 {
+    background-color: var(--darkBlue);
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--darkBlue);
+    outline: none;
+    padding: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 1s;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+
+.btn2 {
+    color: purple;
+    text-transform: uppercase;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--darkBlue);
+    color: var(--darkBlue);
+    padding: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 1s;
+    border-radius: 6px;
+}
