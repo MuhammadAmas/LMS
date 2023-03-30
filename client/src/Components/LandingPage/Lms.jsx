@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import LPNav from "../Lms/LPNav.jsx";
+import LPNav from "./NavBar/LPNav.jsx";
 import Divider from '@mui/material/Divider';
 
 import Hero from "/Assets/Hero.png"
 import "./Lms.css"
+import Footer from "./Footer/Footer.jsx";
 
 export default function Lms() {
   return (
@@ -50,6 +51,7 @@ export default function Lms() {
       <div className="partner-container">
         <h2>Partners</h2>
       </div>
+      <Footer/>
     </main>
   );
 }
