@@ -35,8 +35,20 @@ export default function Lms() {
         </div>
       </div>
       <Divider variant="middle" />
-      <div>
-        <h2>What is Acadist?</h2>
+      <div className="what-container">
+        <h2 className="what-text">What is Acadist?</h2>
+        <ul className="list">
+          <li>Online platform for learning and teaching.</li>
+          <li>Offers courses on various subjects and topics.</li>
+          <li>Taught by experienced educators from around the world.</li>
+          <li>Accessible anytime, anywhere with an internet connection.</li>
+          <li>Tools for instructors to create and manage courses.</li>
+          <li>Start your journey to lifelong learning with Acadist.</li>
+        </ul>
+      </div>
+      <Divider variant="middle" />
+      <div className="partner-container">
+        <h2>Partners</h2>
       </div>
     </main>
   );
