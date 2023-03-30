@@ -6,8 +6,6 @@
 }
 
 .hero-text {
-    /* padding-left: 20px; */
-    /* padding-top: 50px; */
     font-weight: 700;
     font-size: 55px;
     font-family: 'Times New Roman', Times, serif
@@ -36,7 +34,6 @@
 }
 
 .buttons {
-    /* padding: 40px; */
     display: flex;
     justify-content: space-evenly;
     gap: 0.5em;
@@ -55,29 +52,8 @@
     transition: all 1s;
     overflow: hidden;
     border-radius: 6px;
-    
 }
 
-.btn1:hover {
-    color: white;
-}
-
-.btn1::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    top: 0;
-    left: -40px;
-    transform: skewX(45deg);
-    background-color: purple;
-    z-index: -1;
-    transition: all 1s;
-}
-
-.btn1:hover::before {
-    width: 160%;
-}
 
 .btn2 {
     color: purple;
@@ -91,26 +67,4 @@
     font-weight: bold;
     transition: all 1s;
     border-radius: 6px;
-}
-
-.btn2:hover {
-    color: var(--darkBlue);
-    background-color: black;
-}
-
-.btn2::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    top: 0;
-    left: -40px;
-    transform: skewX(45deg);
-    background-color: pink;
-    z-index: -1;
-    transition: all 1s;
-}
-
-.btn2:hover::before {
-    width: 160%;
 }
