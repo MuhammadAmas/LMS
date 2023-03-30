@@ -4,8 +4,10 @@
 .hero-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+
     background-color: wheat;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .hero-text {
