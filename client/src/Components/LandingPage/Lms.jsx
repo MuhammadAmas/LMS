@@ -16,6 +16,7 @@ export default function Lms() {
       <About />
       <Divider variant="middle" />
       <Partner />
+      <Divider variant="middle" />
       <Footer />
     </div>
 
