@@ -1,42 +1,47 @@
 .hero-container {
     display: flex;
     justify-content: space-between;
-    max-width: 80%;
+    max-width: 82%;
     margin: 0 auto;
+
 }
 
 .hero-text {
     font-weight: 700;
     font-size: 55px;
     font-family: 'Karla';
+    margin-bottom: 10px;
+
+
 }
 
 .hero-wrapper {
     padding-left: 27px;
     padding-top: 90px;
+
 }
 
 .hero-image {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 450px;
+    max-height: 450px;
 }
 
 .hero-image-container {
-    padding-right: 60px;
-    padding-top: 70px;
+
+    padding-top: 100px;
 }
 
 .hero-tag {
     font-size: 20px;
     font-weight: 600;
     font-family: 'karla';
-    padding-left: 10px;
 }
 
 .buttons {
     display: flex;
     justify-content: space-evenly;
     gap: 0.5em;
+    padding: 40px;
 }
 
 .btn1 {
