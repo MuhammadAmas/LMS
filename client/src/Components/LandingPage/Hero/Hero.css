@@ -23,7 +23,7 @@
 }
 
 .hero-image-container img{
-    max-width: 550px;
+    max-width: 450px;
     /* max-height: 450px; */
 }
 
@@ -74,18 +74,13 @@
     border-radius: 6px;
 }
 
-@media (max-width: 746px) {
+/* @media (max-width: 746px) {
     .hero-container {
         flex-direction: column;
         max-width: 70px;
-        margin: 0 auto;
-        display: hidden;
-        background-color: red;
-        border: 2px solid red;
         margin: 5em auto;
-    
     }
     .hero-image-container img{
         max-width: 70px;
     }
-}
+} */
