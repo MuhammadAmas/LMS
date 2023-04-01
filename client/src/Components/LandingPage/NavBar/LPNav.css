@@ -16,7 +16,7 @@ nav {
     color: white;
     font-size: 40px;
     font-weight: 800;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'karla';
     padding-left: 70px;
 }
 
@@ -35,12 +35,13 @@ nav {
     position: relative;
     overflow: hidden;
     font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'karla';
     color: black;
     z-index: 1;
     background-color: #fff;
     color: var(--darkBlue);
     font-weight: 600;
+    cursor: pointer;
 }
 
 .button:before {

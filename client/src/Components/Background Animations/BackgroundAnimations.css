@@ -3,11 +3,18 @@
 * {
     margin: 0px;
     padding: 0px;
+    max-width: 100%;
 }
 
 body {
     font-family: 'Exo', sans-serif;
+    position: relative;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* z-index: 1; */
 }
+
 
 
 .context {

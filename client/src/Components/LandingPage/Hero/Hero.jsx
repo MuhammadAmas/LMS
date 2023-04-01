@@ -8,8 +8,7 @@ export default function Hero() {
         <div className="hero-container">
             <div className="hero-wrapper">
                 <h1 className="hero-text">Welcome to Acadist</h1>
-                <span className="hero-tag">
-                    Expand your knowledge with our digital learning platform
+                <span className="hero-tag">Expand your knowledge with our digital learning platform
                 </span>
                 <div className="buttons">
                     <Link to="/signin" className="login">
@@ -30,4 +29,3 @@ export default function Hero() {
         </div>
     );
 }
-

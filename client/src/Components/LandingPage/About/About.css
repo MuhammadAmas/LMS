@@ -8,16 +8,14 @@
 .what-text {
     font-size: 50px;
     font-weight: 700;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
 }
 
-.list {
-    font-size: 18px;
-}
+
 
 ul {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'karla';
     list-style: disc;
     padding: 0;
     margin: 0 auto;
@@ -30,11 +28,11 @@ li {
     font-weight: 700;
     margin-bottom: 10px;
     /* add some spacing between list items */
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
 }
 
 li::marker {
-    color: purple;
+    color: #090979;
     font-size: 1rem;
 }

@@ -1,2 +1,42 @@
 .partner-container {
+    background-color: whitesmoke;
+    max-width: 75%;
+    padding-left: 40px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+.partner-icons {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(15, 109, 53);
+}
+
+img {
+    max-width: 80px;
 }

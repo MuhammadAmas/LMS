@@ -1,42 +1,48 @@
 .hero-container {
     display: flex;
     justify-content: space-between;
-    max-width: 80%;
+    max-width: 82%;
     margin: 0 auto;
+
 }
 
 .hero-text {
     font-weight: 700;
     font-size: 55px;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Karla';
+    margin-bottom: 10px;
+
+
 }
 
 .hero-wrapper {
-    padding-left: 40px;
+    padding-left: 27px;
     padding-top: 90px;
+
 }
 
 .hero-image {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 450px;
+    max-height: 450px;
 }
 
 .hero-image-container {
-    padding-right: 60px;
-    padding-top: 70px;
+
+    padding-top: 100px;
 }
 
 .hero-tag {
     font-size: 20px;
     font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
-    padding-left: 10px;
+    font-family: 'karla';
 }
 
 .buttons {
     display: flex;
     justify-content: space-evenly;
     gap: 0.5em;
+    padding: 40px;
+
 }
 
 .btn1 {
@@ -52,11 +58,12 @@
     transition: all 1s;
     overflow: hidden;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 
 .btn2 {
-    color: purple;
+    cursor: pointer;
     text-transform: uppercase;
     text-transform: uppercase;
     text-decoration: none;
@@ -67,4 +74,5 @@
     font-weight: bold;
     transition: all 1s;
     border-radius: 6px;
+
 }

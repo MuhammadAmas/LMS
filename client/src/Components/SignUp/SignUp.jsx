@@ -12,7 +12,6 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import BackgroundAnimations from '../Background Animations/BackgroundAnimations';
 
 function Copyright(props) {
   return (
@@ -29,7 +28,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-function Up() {
+export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -41,8 +40,8 @@ function Up() {
 
   return (
     <div style={{
-      width: "fit-content",
-      height: "fit-content",
+      width: "500px",
+      height: "600px",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -145,12 +144,3 @@ function Up() {
     </div>
   );
 }
-
-export default function SignUp(){
-
-  return (
-    <BackgroundAnimations >
-      <Up />
-    </BackgroundAnimations >
-  )
-};
