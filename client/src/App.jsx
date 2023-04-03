@@ -1,11 +1,10 @@
 import React from "react";
-import { CssBaseline } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import {
   Student,
   Teacher,
   Lms,
-  NavBar,
+  // NavBar,
   Profile,
   SignUp,
   SignIn,
@@ -16,8 +15,6 @@ import "./App.css";
 export default function App() {
   return (
     <div className="app">
-      <CssBaseline />
-      {/* <NavBar /> */}
 
       <main className="#">
         <div className="#" />
