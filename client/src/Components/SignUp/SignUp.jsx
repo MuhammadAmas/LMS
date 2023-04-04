@@ -16,7 +16,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
-
+  Divider,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
@@ -78,7 +78,26 @@ export default function SignUp() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
-            <Stack spacing={10} pt={2}>
+            <Stack spacing={7} pt={2}>
+              <Button
+                loadingText="Submitting"
+                size="lg"
+                bg={'blue.400'}
+                color={'white'}
+                _hover={{
+                  bg: 'blue.500',
+                }}>
+                Sign up
+              </Button>
+              <Stack spacing="6">
+                <HStack>
+                  <Divider />
+                  <Text fontSize="sm" whiteSpace="nowrap" color="muted">
+                    or continue with
+                  </Text>
+                  <Divider />
+                </HStack>
+              </Stack>
 
               <Button
                 maxW="fitContent"
@@ -104,16 +123,6 @@ export default function SignUp() {
                 <img src={GoogleIcon} alt="Google"
                   style={{ maxWidth: "22px" }} />
                 Continue With Google
-              </Button>
-              <Button
-                loadingText="Submitting"
-                size="lg"
-                bg={'blue.400'}
-                color={'white'}
-                _hover={{
-                  bg: 'blue.500',
-                }}>
-                Sign up
               </Button>
             </Stack>
             <Stack pt={6}>
