@@ -1,0 +1,137 @@
+[
+    {
+        "course_id": "CS101",
+        "course_name": "Introduction to Computer Science",
+        "instructor_name": "Dr. John Doe",
+        "ratings": 4.5,
+        "created_date": "2022-01-01",
+        "image": "https://example.com/images/cs101.jpg",
+        "description": "This course covers the basics of computer science, including programming, algorithms, and data structures."
+    },
+    {
+        "course_id": "ENG101",
+        "course_name": "Introduction to Literature",
+        "instructor_name": "Prof. Jane Smith",
+        "ratings": 4.2,
+        "created_date": "2022-02-01",
+        "image": "https://example.com/images/eng101.jpg",
+        "description": "This course introduces students to various types of literature and helps them develop critical reading and analysis skills."
+    },
+    {
+        "course_id": "HIS101",
+        "course_name": "World History",
+        "instructor_name": "Dr. Michael Lee",
+        "ratings": 4.8,
+        "created_date": "2022-03-01",
+        "image": "https://example.com/images/his101.jpg",
+        "description": "This course explores the major events and developments in world history from ancient times to the present day."
+    },
+    {
+        "course_id": "MATH101",
+        "course_name": "Calculus",
+        "instructor_name": "Prof. Sarah Johnson",
+        "ratings": 4.3,
+        "created_date": "2022-04-01",
+        "image": "https://example.com/images/math101.jpg",
+        "description": "This course covers the fundamentals of calculus, including limits, derivatives, and integrals."
+    },
+    {
+        "course_id": "PHYS101",
+        "course_name": "Introduction to Physics",
+        "instructor_name": "Dr. James Smith",
+        "ratings": 4.7,
+        "created_date": "2022-05-01",
+        "image": "https://example.com/images/phys101.jpg",
+        "description": "This course covers the basic principles of physics, including mechanics, waves, and thermodynamics."
+    },
+    {
+        "course_id": "CHEM101",
+        "course_name": "General Chemistry",
+        "instructor_name": "Prof. David Brown",
+        "ratings": 4.1,
+        "created_date": "2022-06-01",
+        "image": "https://example.com/images/chem101.jpg",
+        "description": "This course covers the basic principles of chemistry, including atomic structure, chemical bonding, and reactions."
+    },
+    {
+        "course_id": "PSYCH101",
+        "course_name": "Introduction to Psychology",
+        "instructor_name": "Dr. Emily Davis",
+        "ratings": 4.9,
+        "created_date": "2022-07-01",
+        "image": "https://example.com/images/psych101.jpg",
+        "description": "This course provides an overview of the field of psychology, including topics such as memory, perception, and social psychology."
+    },
+    {
+        "course_id": "CHEM101",
+        "course_name": "General Chemistry",
+        "instructor_name": "Prof. David Brown",
+        "ratings": 4.1,
+        "created_date": "2022-06-01",
+        "image": "https://example.com/images/chem101.jpg",
+        "description": "This course covers the basic principles of chemistry, including atomic structure, chemical bonding, and reactions."
+    },
+    {
+        "course_id": "PSYCH101",
+        "course_name": "Introduction to Psychology",
+        "instructor_name": "Dr. Emily Davis",
+        "ratings": 4.9,
+        "created_date": "2022-07-01",
+        "image": "https://example.com/images/psych101.jpg",
+        "description": "This course provides an overview of the field of psychology, including topics such as memory, perception, and social psychology."
+    },
+    {
+        "course_id": "ART101",
+        "course_name": "Introduction to Art",
+        "instructor_name": "Prof. Maria Rodriguez",
+        "ratings": 4.6,
+        "created_date": "2022-08-01",
+        "image": "https://example.com/images/art101.jpg",
+        "description": "This course covers the basics of art history and theory, as well as techniques in various art forms such as painting and sculpture."
+    },
+    {
+        "course_id": "BUS101",
+        "course_name": "Introduction to Business",
+        "instructor_name": "Prof. Andrew Lee",
+        "ratings": 4.4,
+        "created_date": "2022-09-01",
+        "image": "https://example.com/images/bus101.jpg",
+        "description": "This course provides an overview of the business world, including topics such as management, marketing, and accounting."
+    },
+    {
+        "course_id": "ECON101",
+        "course_name": "Principles of Economics",
+        "instructor_name": "Dr. Elizabeth Chen",
+        "ratings": 4.2,
+        "created_date": "2022-10-01",
+        "image": "https://example.com/images/econ101.jpg",
+        "description": "This course covers the basics of microeconomics and macroeconomics, including topics such as supply and demand, market structures, and economic growth."
+    },
+    {
+        "course_id": "CS101",
+        "course_name": "Introduction to Computer Science",
+        "instructor_name": "Dr. John Doe",
+        "ratings": 4.5,
+        "created_date": "2022-01-01",
+        "image": "https://example.com/images/cs101.jpg",
+        "description": "This course covers the basics of computer science, including programming, algorithms, and data structures."
+    },
+    {
+        "course_id": "LANG101",
+        "course_name": "Introduction to Language",
+        "instructor_name": "Dr. Maria Hernandez",
+        "ratings": 4.5,
+        "created_date": "2022-12-01",
+        "image": "https://example.com/images/lang101.jpg",
+        "description": "This course covers the basics of linguistics, including topics such as phonetics, morphology, syntax, and semantics."
+    },
+    {
+        "course_id": "PHIL101",
+        "course_name": "Introduction to Philosophy",
+        "instructor_name": "Prof. Christopher Brown",
+        "ratings": 4.3,
+        "created_date": "2023-01-01",
+        "image": "https://example.com/images/phil101.jpg",
+        "description": "This course covers the basics of philosophy, including topics such as epistemology, metaphysics, ethics, and logic."
+    }
+]

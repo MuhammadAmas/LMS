@@ -1,13 +1,15 @@
 import React from 'react';
-import UdemyCourses from '../getUdemyCourses';
+import Courses from './Courses';
+import Card from './Card';
+
 
 
 export default function Student() {
-
     return (
         <div >
             <h1>Student!!!</h1>
-            <UdemyCourses />
+            {/* <Courses /> */}
+            <Card />
         </div>
     );
 }
