@@ -1,6 +1,6 @@
 import React from 'react';
 import Courses from './Courses';
-import Card from './Card';
+import CourseCard from './Card';
 
 
 
@@ -9,7 +9,7 @@ export default function Student() {
         <div >
             <h1>Student!!!</h1>
             {/* <Courses /> */}
-            <Card />
+            <CourseCard />
         </div>
     );
 }
