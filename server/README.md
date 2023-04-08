@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Create your DataBase
 ### Here is the Schema code
 ```sql
@@ -17,6 +18,13 @@ VALUES
 ('My Second Note', 'A note about something else');
 ```
 ## Change the configuration in `.env` file
+=======
+## Create a `.env` file in server folder and write the following keys and their values.
+```
+REACT_APP_UDEMY_KEY=key
+REACT_APP_UDEMY_TOKEN=token
+```
+>>>>>>> dev-zain
 ## Run the following commands
 ```javascript
 $ npm install
