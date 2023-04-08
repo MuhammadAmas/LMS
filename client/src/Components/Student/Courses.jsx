@@ -1,21 +1,40 @@
 import React from 'react';
 import data from './data.json';
-import { Grid, useMediaQuery } from '@chakra-ui/react';
+import { Grid, useMediaQuery, Button } from '@chakra-ui/react';
 import CourseCard from './CourseCard';
 
 export default function Courses() {
     const [isLargerThan700] = useMediaQuery('(min-width: 700px)');
+    const [showItems, setShowItems] = React.useState(3);
 
+    const handleLoadMore = () => {
+        setShowItems(showItems + 6);
+    }
+
+    //     return (
+    //         <Grid
+    //             templateColumns={isLargerThan700 ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)'}
+    //             gap={0}
+    //             justifyItems="center"
+    //         >
+    //             {data.map((course) => (
+    //                 <CourseCard key={course.course_id} course={course} />
+    //             ))}
+    //         </Grid>
+    //     );
     return (
-        <Grid
-            templateColumns={isLargerThan700 ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)'}
-            gap={0}
-
-            justifyItems="center"
-        >
-            {data.map((course) => (
-                <CourseCard key={course.course_id} course={course} />
-            ))}
-        </Grid>
+        <>
+            <Grid templateColumns={isLargerThan700 ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)'} gap={0}>
+                {data.slice(0, showItems).map((course) => (
+                    <CourseCard key={course.course_id} course={course} />
+                ))}
+            </Grid>
+            {showItems < data.length && (
+                <Button onClick={handleLoadMore} mt={4} mx="auto" display="block">
+                    Load More...
+                </Button>
+            )}
+        </>
     );
 }
+
