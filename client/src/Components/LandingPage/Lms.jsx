@@ -4,7 +4,7 @@ import Hero from './Hero/Hero.jsx';
 import About from "./About/About.jsx";
 import Partner from "./Partner/Partner.jsx"
 import Footer from "./Footer/Footer.jsx";
-import Divider from '@mui/material/Divider';
+import { Divider } from "@chakra-ui/react";
 import "./Lms.css"
 
 export default function Lms() {
@@ -12,11 +12,11 @@ export default function Lms() {
     <div className="lms">
       <LPNav />
       <Hero />
-      <Divider variant="middle" />
+      <Divider />
       <About />
-      <Divider variant="middle" />
+      <Divider />
       <Partner />
-      <Divider variant="middle" />
+      <Divider />
       <Footer />
     </div>
 

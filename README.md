@@ -1,7 +1,11 @@
 ## For installation run the following command
 
-### $ npm install
+```
+$ npm install
+```
 
 ## To start the project, run the following command
 
-### $ npm run dev
+```
+$ npm run dev
+```
