@@ -1,15 +1,21 @@
-import React from 'react'
+import React from 'react';
 import data from './data.json';
+import { Grid, useMediaQuery } from '@chakra-ui/react';
+import CourseCard from './CourseCard';
 
 export default function Courses() {
+    const [isLargerThan700] = useMediaQuery('(min-width: 700px)');
+
     return (
-        <div>
+        <Grid
+            templateColumns={isLargerThan700 ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)'}
+            gap={0}
+
+            justifyItems="center"
+        >
             {data.map((course) => (
-                <div key={course.course_id}>
-                    <h2>{course.course_name}</h2>
-                    <p>{course.description}</p>
-                </div>
+                <CourseCard key={course.course_id} course={course} />
             ))}
-        </div>
+        </Grid>
     );
 }
