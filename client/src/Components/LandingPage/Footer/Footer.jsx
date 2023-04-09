@@ -22,6 +22,7 @@ export const Footer = () => (
         >
             <Stack justify="space-between" direction="row" align="center">
                 <Logo />
+
                 <ButtonGroup variant="ghost">
                     <IconButton
                         as="a"

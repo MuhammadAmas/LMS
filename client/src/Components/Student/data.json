@@ -1,0 +1,110 @@
+[
+    {
+        "course_id": "CS101",
+        "course_name": "Introduction to Computer Science",
+        "instructor_name": "Dr. John Doe",
+        "ratings": 4.5,
+        "created_date": "2022-01-01",
+        "image": "https://img.freepik.com/free-vector/flat-computer-engineering-concept_23-2148159062.jpg?size=626&ext=jpg&ga=GA1.1.162867055.1679223693&semt=ais",
+        "description": "This course covers the basics of computer science, including programming, algorithms, and data structures."
+    },
+    {
+        "course_id": "ENG101",
+        "course_name": "Introduction to Literature",
+        "instructor_name": "Prof. Jane Smith",
+        "ratings": 4.2,
+        "created_date": "2022-02-01",
+        "image": "https://img.freepik.com/free-vector/tiny-college-persons-correcting-mistakes-text-manuscript-people-checking-grammar-punctuation-spelling-errors-flat-vector-illustration-education-editing-concept-banner-website-design_74855-22564.jpg?w=740&t=st=1680985001~exp=1680985601~hmac=1e3c3b64452cf5a7f2f6b89a4969801f2f1a3bd9bf5dbbc1d1af57073d725782",
+        "description": "This course introduces students to various types of literature and helps them develop critical reading and analysis skills."
+    },
+    {
+        "course_id": "HIS101",
+        "course_name": "World History",
+        "instructor_name": "Dr. Michael Lee",
+        "ratings": 4.8,
+        "created_date": "2022-03-01",
+        "image": "https://img.freepik.com/premium-vector/travel-around-world-destination_42052-9.jpg?w=996",
+        "description": "This course explores the major events and developments in world history from ancient times to the present day."
+    },
+    {
+        "course_id": "MATH101",
+        "course_name": "Calculus",
+        "instructor_name": "Prof. Sarah Johnson",
+        "ratings": 4.3,
+        "created_date": "2022-04-01",
+        "image": "https://img.freepik.com/free-vector/math-background_23-2148147326.jpg?w=740&t=st=1680985216~exp=1680985816~hmac=aedf3567e24063cbf82708669488f009d23b97170b231ad79d4bae180cd3ba6a",
+        "description": "This course covers the fundamentals of calculus, including limits, derivatives, and integrals."
+    },
+    {
+        "course_id": "PHYS101",
+        "course_name": "Introduction to Physics",
+        "instructor_name": "Dr. James Smith",
+        "ratings": 4.7,
+        "created_date": "2022-05-01",
+        "image": "https://img.freepik.com/free-vector/astronomy-concept-with-retro-science-cartoon-icons-set_1284-7503.jpg?w=740&t=st=1680985297~exp=1680985897~hmac=e5a73904c567780f670fc628b25e1a2426c813a9f3e7c5485d89f77d6a7b7b86",
+        "description": "This course covers the basic principles of physics, including mechanics, waves, and thermodynamics."
+    },
+    {
+        "course_id": "CHEM101",
+        "course_name": "General Chemistry",
+        "instructor_name": "Prof. David Brown",
+        "ratings": 4.1,
+        "created_date": "2022-06-01",
+        "image": "https://img.freepik.com/free-vector/chemical-laboratory-workspace-design-concept_1284-11560.jpg?w=740&t=st=1680985327~exp=1680985927~hmac=fc47c05a1423b2e39eb35b790e3befd7d67c483e052a8e22d7ce72f4867371a8",
+        "description": "This course covers the basic principles of chemistry, including atomic structure, chemical bonding, and reactions."
+    },
+    {
+        "course_id": "PSYCH101",
+        "course_name": "Introduction to Psychology",
+        "instructor_name": "Dr. Emily Davis",
+        "ratings": 4.9,
+        "created_date": "2022-07-01",
+        "image": "https://img.freepik.com/free-vector/mental-health-awareness-concept_23-2148523714.jpg?w=740&t=st=1680985439~exp=1680986039~hmac=9c8826ba55187919c9446c69b221fb088463c44f8cb0571867bd7c75753beaa5",
+        "description": "This course provides an overview of the field of psychology, including topics such as memory, perception, and social psychology."
+    },
+    {
+        "course_id": "ART101",
+        "course_name": "Introduction to Art",
+        "instructor_name": "Prof. Maria Rodriguez",
+        "ratings": 4.6,
+        "created_date": "2022-08-01",
+        "image": "https://img.freepik.com/free-photo/brushes-colorful-painting_23-2147895445.jpg?t=st=1680985459~exp=1680986059~hmac=108aac1154c4487e4ed61b14016ed0b2ce21293daf278dd730a378eef231c5d4",
+        "description": "This course covers the basics of art history and theory, as well as techniques in various art forms such as painting and sculpture."
+    },
+    {
+        "course_id": "BUS101",
+        "course_name": "Introduction to Business",
+        "instructor_name": "Prof. Andrew Lee",
+        "ratings": 4.4,
+        "created_date": "2022-09-01",
+        "image": "https://img.freepik.com/free-vector/people-analyzing-growth-charts_23-2148866843.jpg?w=740&t=st=1680985508~exp=1680986108~hmac=40e5ef6e1a48b62e298f1d019d250a6d483bcfda9f91061bd1d1f189adfafb9c",
+        "description": "This course provides an overview of the business world, including topics such as management, marketing, and accounting."
+    },
+    {
+        "course_id": "ECON101",
+        "course_name": "Principles of Economics",
+        "instructor_name": "Dr. Elizabeth Chen",
+        "ratings": 4.2,
+        "created_date": "2022-10-01",
+        "image": "https://img.freepik.com/free-vector/finance-illustration-concept_114360-769.jpg?w=740&t=st=1680985548~exp=1680986148~hmac=fbd273e0879207437d50fc22ccdd33c0d87365e660132c7fe9a20f9c22db0161",
+        "description": "This course covers the basics of microeconomics and macroeconomics, including topics such as supply and demand, market structures, and economic growth."
+    },
+    {
+        "course_id": "LANG101",
+        "course_name": "Introduction to Language",
+        "instructor_name": "Dr. Maria Hernandez",
+        "ratings": 4.5,
+        "created_date": "2022-12-01",
+        "image": "https://img.freepik.com/free-vector/language-word-concept-with-flat-design_23-2147866087.jpg?size=626&ext=jpg&ga=GA1.2.162867055.1679223693&semt=sph",
+        "description": "This course covers the basics of linguistics, including topics such as phonetics, morphology, syntax, and semantics."
+    },
+    {
+        "course_id": "WEB301",
+        "course_name": "Web Development",
+        "instructor_name": "Amas Waseem",
+        "ratings": 4.3,
+        "created_date": "2023-01-01",
+        "image": "https://img.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_23-2149365021.jpg?size=626&ext=jpg&ga=GA1.1.162867055.1679223693&semt=ais",
+        "description": "This course covers the basics of HTML,CSS and JavaScript and extends it to the libraries of javascript such as React."
+    }
+]

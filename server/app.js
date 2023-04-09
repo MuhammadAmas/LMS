@@ -1,30 +1,43 @@
-import express from 'express';
-import {getNote, getNotes, createNote} from './database.js'
-const app = express();
-app.use(express.json());
+// import express from 'express';
+import axios from 'axios';
+import dotenv from 'dotenv';
 
-app.get('/notes', async (req, res) => {
-    const notes = await getNotes();
-    res.send(notes)
-})
 
-app.get('/notes/:id', async (req, res) => {
-    const id = req.params.id
-    const note = await getNote(id);
-    res.send(note)
-})
+// async function data() {
+//     const response = await axios.get('http://www.udemy.com/api-2.0/courses', {
+//         headers: {
+//             // Authorization: `Basic ${(`${clientId}:${clientSecret}`)}`,
 
-app.post('/notes', async (req, res) => {
-    const {title, contents} = req.body;
-    const note = await createNote(title, contents);
-    res.status(201).send(note)
-})
+//             "Accept": "application/json, text/plain, */*",
+//             "Authorization": "Basic NmtKWThHSXl5dmlGMXcwOExUREVzbGZydUxwWlZqenljOXhTekpWajp4cEtqNk5aZjlpUXJLMDNQcGVRU2FQUGx1Y2s2UmNrY1JrZVNOZHh0dm1XUWRHQ1AwM3FQYXRTSm8xWWJSQUhEQ01qRFh0Vk1rbHdGdHZxcmhKcG1yQ1FHWENLRVhUSzdwR3FDTndxRk5qUVZDOEtaSGpiemE5a3Bib1ZZejhQcQ==",
+//             "Content-Type": "application/json",
+//             "Access-Control-Allow-Origin": "*"
+//         },
+//     });
+//     console.log(response.data)
+// }
+// data();
 
-// app.use((err,req,res,next) => {
-//     console.error(err.stack);
-//     res.status(500).send('Something broke!');
-// })
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000');
-})
+async function data() {
+
+    const udemyKey = process.env.REACT_APP_UDEMY_KEY;
+    const udemySecret = process.env.REACT_APP_UDEMY_TOKEN;
+    const apiUrl = 'https://www.udemy.com/api-2.0/courses/';
+    
+    try {
+        const response = await axios.get(apiUrl, {
+            headers: {
+                'Authorization': 'Bearer ' + udemySecret,
+                'X-Udemy-Client-Id': udemyKey,
+            },
+        });
+        console.log(response.data)
+        return response.data;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+
+}
+data();
