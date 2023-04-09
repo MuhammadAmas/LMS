@@ -1,7 +1,10 @@
 ## Create a `.env` file in server folder and write the following keys and their values.
 ```
-REACT_APP_UDEMY_KEY=key
-REACT_APP_UDEMY_TOKEN=token
+MYSQL_HOST='127.0.0.1'
+MYSQL_USER='root'
+MYSQL_PASSWORD=''
+MYSQL_DATABASE='acadist' 
+MYSQL_PORT='3306'
 ```
 ## Run the following commands
 ```javascript
