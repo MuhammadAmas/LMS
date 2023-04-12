@@ -20,3 +20,8 @@ export async function createCourse(course_id, course_name, instructor_name, rati
     const id = result.insertID;
     return getCourses(id);
 }
+
+export async function deleteCourse(id) {
+    const [result] = await pool.query("DELETE FROM courses WHERE course_id = ?", [id]);
+    return result;
+}
