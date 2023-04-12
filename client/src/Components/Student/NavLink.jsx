@@ -18,20 +18,6 @@ import {
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-// const NavLink = ({ children }) => (
-//     <Link
-//         px={2}
-//         py={1}
-//         rounded={'md'}
-//         _hover={{
-//             textDecoration: 'none',
-//             bg: useColorModeValue('gray.200', 'gray.700'),
-//         }}
-//         href={'#'}>
-//         {children}
-//     </Link>
-// );
-
 export default function Nav() {
     const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -39,7 +25,7 @@ export default function Nav() {
         <>
             <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                    <Box>Logo</Box>
+                    <Box>ACADIST</Box>
 
                     <Flex alignItems={'center'}>
                         <Stack direction={'row'} spacing={7}>
@@ -63,7 +49,7 @@ export default function Nav() {
                                     <br />
                                     <Center>
                                         <Avatar
-                                            size={'2xl'}
+                                            size={'2x1'}
                                             src={'https://api.dicebear.com/6.x/avataaars/svg?seed=Oliver'}
                                         />
                                     </Center>
@@ -74,7 +60,6 @@ export default function Nav() {
                                     <br />
                                     <MenuDivider />
                                     <MenuItem>Profile</MenuItem>
-                                    <MenuItem>Account Settings</MenuItem>
                                     <MenuItem>Sign Out</MenuItem>
                                 </MenuList>
                             </Menu>
