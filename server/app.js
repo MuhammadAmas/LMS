@@ -1,43 +1,44 @@
-// import express from 'express';
-import axios from 'axios';
-import dotenv from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import { getCourses, createCourse, deleteCourse } from './database.js'
+const app = express();
+app.use(cors())
+app.use(express.json());
 
+app.get('/courses', async (req, res) => {
+    const notes = await getCourses();
+    res.send(notes)
+})
 
-// async function data() {
-//     const response = await axios.get('http://www.udemy.com/api-2.0/courses', {
-//         headers: {
-//             // Authorization: `Basic ${(`${clientId}:${clientSecret}`)}`,
-
-//             "Accept": "application/json, text/plain, */*",
-//             "Authorization": "Basic NmtKWThHSXl5dmlGMXcwOExUREVzbGZydUxwWlZqenljOXhTekpWajp4cEtqNk5aZjlpUXJLMDNQcGVRU2FQUGx1Y2s2UmNrY1JrZVNOZHh0dm1XUWRHQ1AwM3FQYXRTSm8xWWJSQUhEQ01qRFh0Vk1rbHdGdHZxcmhKcG1yQ1FHWENLRVhUSzdwR3FDTndxRk5qUVZDOEtaSGpiemE5a3Bib1ZZejhQcQ==",
-//             "Content-Type": "application/json",
-//             "Access-Control-Allow-Origin": "*"
-//         },
-//     });
-//     console.log(response.data)
-// }
-// data();
-
-
-async function data() {
-
-    const udemyKey = process.env.REACT_APP_UDEMY_KEY;
-    const udemySecret = process.env.REACT_APP_UDEMY_TOKEN;
-    const apiUrl = 'https://www.udemy.com/api-2.0/courses/';
-    
+app.post('/courses', async (req, res) => {
+    const { course_id, course_name, instructor_name, ratings, created_date, image, description } = req.body;
     try {
-        const response = await axios.get(apiUrl, {
-            headers: {
-                'Authorization': 'Bearer ' + udemySecret,
-                'X-Udemy-Client-Id': udemyKey,
-            },
-        });
-        console.log(response.data)
-        return response.data;
+        const course = await createCourse(course_id, course_name, instructor_name, ratings, created_date, image, description);
+        console.log("object");
+        res.status(201).send(course);
     } catch (error) {
         console.error(error);
-        return [];
+        res.status(400).send('Bad Request');
     }
+});
 
-}
-data();
+app.delete('/courses/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const course = await deleteCourse(id);
+        res.status(200).send(course);
+    } catch (error) {
+        console.error(error);
+        res.status(400).send('Bad Request');
+    }
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+})
+
+app.listen(3000, () => {
+    console.log('Server started on port 3000');
+})
+
