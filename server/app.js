@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { getCourses, createCourse } from './database.js'
+import { getCourses, createCourse, deleteCourse } from './database.js'
 const app = express();
 app.use(cors())
 app.use(express.json());
@@ -22,6 +22,16 @@ app.post('/courses', async (req, res) => {
     }
 });
 
+app.delete('/courses/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const course = await deleteCourse(id);
+        res.status(200).send(course);
+    } catch (error) {
+        console.error(error);
+        res.status(400).send('Bad Request');
+    }
+});
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
