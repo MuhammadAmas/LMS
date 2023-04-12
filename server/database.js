@@ -1,22 +1,48 @@
-import mysql from 'mysql2'
+// import { Pool } from 'pg';
+// import p
+// import dotenv from 'dotenv';
+// dotenv.config();
+
+// const { Pool } = require('pg');
+// const pool = new Pool({
+//     host: process.env.PG_HOST,
+//     user: process.env.PG_USER,
+//     password: process.env.PG_PASSWORD,
+//     database: process.env.PG_DATABASE,
+//     port: process.env.PG_PORT,
+// });
+
+// export async function getCourses() {
+//     const [result] = await pool.query("SELECT * FROM courses");
+//     return result;
+// }
+
+// export async function createCourse(course_id, course_name, instructor_name, ratings, created_date, image, description) {
+//     const [result] = await pool.query("INSERT INTO courses (course_id, course_name, instructor_name, ratings, created_date, image, description) VALUES (?, ?, ?, ?, ?, ?, ?)", [course_id, course_name, instructor_name, ratings, created_date, image, description]);
+//     const id = result.insertID;
+//     return getCourses(id);
+// }
+
+// import { Pool } from 'pg';
+import pkg from 'pg';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const pool = mysql.createPool({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE,
-    port: process.env.MYSQL_PORT,
-}).promise();
+const { Pool } = pkg;
+const pool = new Pool({
+    host: process.env.PG_HOST,
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWORD,
+    database: process.env.PG_DATABASE,
+    port: process.env.PG_PORT,
+});
 
 export async function getCourses() {
-    const [result] = await pool.query("SELECT * FROM courses");
-    return result;
+    const { rows } = await pool.query('SELECT * FROM courses');
+    return rows;
 }
 
 export async function createCourse(course_id, course_name, instructor_name, ratings, created_date, image, description) {
-    const [result] = await pool.query("INSERT INTO courses (course_id, course_name, instructor_name, ratings, created_date, image, description) VALUES (?, ?, ?, ?, ?, ?, ?)", [course_id, course_name, instructor_name, ratings, created_date, image, description]);
-    const id = result.insertID;
-    return getCourses(id);
+    const { rows } = await pool.query('INSERT INTO courses (course_id, course_name, instructor_name, ratings, created_date, image, description) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', [course_id, course_name, instructor_name, ratings, created_date, image, description]);
+    return rows[0];
 }
