@@ -218,12 +218,14 @@ export default function SignUp() {
                 </InputRightElement>
               </InputGroup>
             </FormControl>
+
             <RadioGroup value={userType} onChange={handleUserTypeChange}>
               <Stack direction="row">
                 <Radio value="student">Student</Radio>
                 <Radio value="teacher">Teacher</Radio>
               </Stack>
             </RadioGroup>
+
             <Stack spacing={7} pt={2}>
               <Button
                 loadingText="Submitting"
