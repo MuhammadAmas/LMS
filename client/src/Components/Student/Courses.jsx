@@ -10,18 +10,6 @@ export default function Courses() {
     const handleLoadMore = () => {
         setShowItems(showItems + 6);
     }
-
-    //     return (
-    //         <Grid
-    //             templateColumns={isLargerThan700 ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)'}
-    //             gap={0}
-    //             justifyItems="center"
-    //         >
-    //             {data.map((course) => (
-    //                 <CourseCard key={course.course_id} course={course} />
-    //             ))}
-    //         </Grid>
-    //     );
     return (
         <>
             <Grid templateColumns={isLargerThan700 ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)'} gap={0}>
