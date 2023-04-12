@@ -26,10 +26,10 @@ app.delete('/courses/:id', async (req, res) => {
     const { id } = req.params;
     try {
         const course = await deleteCourse(id);
-        res.status(200).send(course);
+        res.sendStatus(201).send(course);
     } catch (error) {
         console.error(error);
-        res.status(400).send('Bad Request');
+        res.sendStatus(400).send('Bad Request');
     }
 });
 
