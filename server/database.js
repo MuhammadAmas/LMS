@@ -29,3 +29,13 @@ export async function createCourse(course_id, course_name, instructor_name, rati
     return rows[0];
 }
 
+export async function createUser(username, password, type, email) {
+    const { rows } = await pool.query('INSERT INTO users (username, password, type,email ) VALUES ($1, $2, $3, $4) RETURNING *', [username, password, type, email]);
+    return rows[0];
+}
+
+export async function getUser(email, password) {
+    const { rows } = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+    // const user = rows[0];
+    return rows[0];
+}
