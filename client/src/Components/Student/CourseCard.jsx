@@ -43,11 +43,11 @@ export default function CourseCard({ course }) {
                     <Button variant='ghost' colorScheme='blue'>
                         Enroll now
                     </Button>
-                    <Button variant='ghost' colorScheme='blue'
+                    {/* <Button variant='ghost' colorScheme='blue'
                         onClick={
                             () => { deleteCourseHandle(course.course_id) }}>
                         Delete
-                    </Button>
+                    </Button> */}
                 </ButtonGroup>
             </CardFooter>
         </Card>
