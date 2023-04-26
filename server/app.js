@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { getCourses, createCourse, deleteCourse } from './database.js'
+import { getCourses, createCourse, deleteCourse, createUser, getUser } from './database.js'
 const app = express();
 app.use(cors())
 app.use(express.json());
@@ -22,14 +22,41 @@ app.post('/courses', async (req, res) => {
     }
 });
 
+app.post('/signup', async (req, res) => {
+    const { username, password, type, email, } = req.body;
+    try {
+        const user = await createUser(username, password, type, email,);
+        res.status(201).send(user);
+    } catch (error) {
+        console.error(error);
+        res.status(400).send('Bad Request');
+    }
+});
+
+app.post('/signin', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await getUser(email, password);
+        if (user.password == password) {
+            res.status(201).send(user);
+        }
+        else {
+            res.status(404).send('Unauthorized User');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(400).send('Bad Request');
+    }
+});
+
 app.delete('/courses/:id', async (req, res) => {
     const { id } = req.params;
     try {
         const course = await deleteCourse(id);
-        res.status(200).send(course);
+        res.sendStatus(201).send(course);
     } catch (error) {
         console.error(error);
-        res.status(400).send('Bad Request');
+        res.sendStatus(400).send('Bad Request');
     }
 });
 

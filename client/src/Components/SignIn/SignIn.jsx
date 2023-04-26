@@ -1,116 +1,4 @@
-// import React from 'react'
-// import {
-//     Box,
-//     Button,
-//     Checkbox,
-//     Container,
-//     Divider,
-//     FormControl,
-//     FormLabel,
-//     Heading,
-//     HStack,
-//     Input,
-//     Stack,
-//     Text,
-// } from '@chakra-ui/react'
-// import { Logo } from './Logo'
-// import { OAuthButtonGroup } from './OAuthButtonGroup'
-// import { PasswordField } from './PasswordField'
-
-// export default function SignIn() {
-//     return (
-//         <Container
-//             maxW="lg"
-//             py={{
-//                 base: '12',
-//                 md: '24',
-//             }}
-//             px={{
-//                 base: '0',
-//                 sm: '8',
-//             }}
-//         >
-//             <Stack spacing="8">
-//                 <Stack spacing="6">
-//                     {/* <Logo /> */}
-//                     <Stack
-//                         spacing={{
-//                             base: '2',
-//                             md: '3',
-//                         }}
-//                         textAlign="center"
-//                     >
-//                         <Heading
-//                             size={{
-//                                 base: 'xs',
-//                                 md: 'sm',
-//                             }}
-//                         >
-//                             Sign in to your account
-//                         </Heading>
-//                         <HStack spacing="1" justify="center">
-//                             <Text color="muted">Don't have an account?</Text>
-//                             <Button variant="link" colorScheme="blue">
-//                                 Sign up
-//                             </Button>
-//                         </HStack>
-//                     </Stack>
-//                 </Stack>
-//                 <Box
-//                     py={{
-//                         base: '0',
-//                         sm: '8',
-//                     }}
-//                     px={{
-//                         base: '4',
-//                         sm: '10',
-//                     }}
-//                     bg={{
-//                         base: 'transparent',
-//                         sm: 'bg-surface',
-//                     }}
-//                     boxShadow={{
-//                         base: 'none',
-//                         sm: 'md',
-//                     }}
-//                     borderRadius={{
-//                         base: 'none',
-//                         sm: 'xl',
-//                     }}
-//                 >
-//                     <Stack spacing="6">
-//                         <Stack spacing="5">
-//                             <FormControl>
-//                                 <FormLabel htmlFor="email">Email</FormLabel>
-//                                 <Input id="email" type="email" />
-//                             </FormControl>
-//                             <PasswordField />
-//                         </Stack>
-//                         <HStack justify="space-between">
-//                             <Checkbox defaultChecked>Remember me</Checkbox>
-//                             <Button variant="link" colorScheme="blue" size="sm">
-//                                 Forgot password?
-//                             </Button>
-//                         </HStack>
-//                         <Stack spacing="6">
-//                             <Button variant="primary">Sign in</Button>
-//                             <HStack>
-//                                 <Divider />
-//                                 <Text fontSize="sm" whiteSpace="nowrap" color="muted">
-//                                     or continue with
-//                                 </Text>
-//                                 <Divider />
-//                             </HStack>
-//                             <OAuthButtonGroup />
-//                         </Stack>
-//                     </Stack>
-//                 </Box>
-//             </Stack>
-//         </Container>
-//     );
-// }
-
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Flex,
     Box,
@@ -129,9 +17,35 @@ import {
 } from '@chakra-ui/react';
 
 import { GoogleIcon } from './ProviderIcons';
+import userSignin from '../../utils/userSigninAPI';
 
 
 export default function SignIn() {
+
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+
+    function handleClick() {
+        const user = {
+            email: email,
+            password: password
+        }
+        try {
+            const response = userSignin("POST", "http://localhost:3000/signin", user).then((result) => {
+                if (result.type === "student")
+                    window.location.href = "/student/" + result.user_id;
+                else
+                    window.location.href = "/teacher";
+                console.log(result.type);
+            }
+            );
+
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+
     return (
         <Flex
             minH={'100vh'}
@@ -153,11 +67,11 @@ export default function SignIn() {
                     <Stack spacing={4}>
                         <FormControl id="email">
                             <FormLabel>Email address</FormLabel>
-                            <Input type="email" />
+                            <Input type="email" onChange={(e) => setEmail(e.target.value)} />
                         </FormControl>
                         <FormControl id="password">
                             <FormLabel>Password</FormLabel>
-                            <Input type="password" />
+                            <Input type="password" onChange={(e) => setPassword(e.target.value)} />
                         </FormControl>
                         <Stack spacing={7}>
                             <Stack
@@ -171,6 +85,7 @@ export default function SignIn() {
                             <Button
                                 bg={'blue.400'}
                                 color={'white'}
+                                onClick={handleClick}
                                 _hover={{
                                     bg: 'blue.500',
                                 }}>

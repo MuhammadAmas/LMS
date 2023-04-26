@@ -1,27 +1,41 @@
-import mysql from 'mysql2'
+import pkg from 'pg';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const pool = mysql.createPool({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE,
-    port: process.env.MYSQL_PORT,
-}).promise();
+const { Pool } = pkg;
+const pool = new Pool({
+    host: process.env.PG_HOST,
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWORD,
+    database: process.env.PG_DATABASE,
+    port: process.env.PG_PORT,
+});
 
+export async function deleteCourse(id) {
+    const query = {
+        text: 'DELETE FROM courses WHERE course_id = $1',
+        values: [id]
+    };
+    const { rowCount } = await pool.query(query);
+    return rowCount;
+}
 export async function getCourses() {
-    const [result] = await pool.query("SELECT * FROM courses");
-    return result;
+    const { rows } = await pool.query('SELECT * FROM courses');
+    return rows;
 }
 
 export async function createCourse(course_id, course_name, instructor_name, ratings, created_date, image, description) {
-    const [result] = await pool.query("INSERT INTO courses (course_id, course_name, instructor_name, ratings, created_date, image, description) VALUES (?, ?, ?, ?, ?, ?, ?)", [course_id, course_name, instructor_name, ratings, created_date, image, description]);
-    const id = result.insertID;
-    return getCourses(id);
+    const { rows } = await pool.query('INSERT INTO courses (course_id, course_name, instructor_name, ratings, created_date, image, description) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', [course_id, course_name, instructor_name, ratings, created_date, image, description]);
+    return rows[0];
 }
 
-export async function deleteCourse(id) {
-    const [result] = await pool.query("DELETE FROM courses WHERE course_id = ?", [id]);
-    return result;
+export async function createUser(username, password, type, email) {
+    const { rows } = await pool.query('INSERT INTO users (username, password, type,email ) VALUES ($1, $2, $3, $4) RETURNING *', [username, password, type, email]);
+    return rows[0];
+}
+
+export async function getUser(email, password) {
+    const { rows } = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+    // const user = rows[0];
+    return rows[0];
 }
