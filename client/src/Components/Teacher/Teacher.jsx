@@ -9,8 +9,12 @@ export default function Student() {
     return (
         <div className='page-container'>
             <Nav />
+            
             <CreateCourse/>
-            <h1>Popular Course</h1>
+            <h1>Created Course</h1>
+            <Courses />
+
+            <h1>All Course</h1>
             <Divider />
             <Courses />
         </div>

@@ -51,7 +51,8 @@ function CreateCourse() {
 
                         <FormControl mt={4}>
                             <FormLabel>Image URL</FormLabel>
-                            <Input placeholder='Give the URL of the image' />
+                            <Input placeholder='Give the URL of the image' 
+                            type='url' />
                         </FormControl>
 
                         <FormControl mt={4}>
