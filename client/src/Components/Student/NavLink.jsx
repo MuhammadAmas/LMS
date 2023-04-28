@@ -19,23 +19,17 @@ import {
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-// const NavLink = ({ children }) => (
-//     <Link
-//         px={2}
-//         py={1}
-//         rounded={'md'}
-//         _hover={{
-//             textDecoration: 'none',
-//             bg: useColorModeValue('gray.200', 'gray.700'),
-//         }}
-//         href={'#'}>
-//         {children}
-//     </Link>
-// );
-
-export default function Nav() {
+export default function Nav({ isChecked }) {
     const { colorMode, toggleColorMode } = useColorMode();
-    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    function handleSignout() {
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+        localStorage.removeItem("type");
+        sessionStorage.clear();
+        window.location.href = "/";
+    }
+
     return (
         <>
             <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -78,7 +72,13 @@ export default function Nav() {
                                     <MenuDivider />
                                     <MenuItem>Profile</MenuItem>
                                     <MenuItem>Account Settings</MenuItem>
-                                    <MenuItem>Sign Out</MenuItem>
+                                    <MenuItem>
+                                        <Button
+                                            onClick={handleSignout}
+                                        >
+                                            Sign Out
+                                        </Button>
+                                    </MenuItem>
                                 </MenuList>
                             </Menu>
                         </Stack>
