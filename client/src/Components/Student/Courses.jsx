@@ -22,7 +22,7 @@ export default function Courses() {
     useEffect(() => {
         coursesData();
     }, [])
-    console.log("record", courses)
+    // console.log("record", courses)
 
     return (
         <>
