@@ -9,7 +9,7 @@ export default function Student() {
     return (
         <div className='page-container'>
             <Nav />
-            <h1>Popular Course</h1>
+            <h1>Popular Courses</h1>
             <Divider />
             <Courses />
         </div>
