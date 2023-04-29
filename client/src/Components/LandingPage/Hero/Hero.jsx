@@ -4,6 +4,7 @@ import './Hero.css';
 import HeroPic from "/Assets/Hero.png"
 
 export default function Hero() {
+
     return (
         <div className="hero-container">
             <div className="hero-wrapper">
@@ -12,12 +13,12 @@ export default function Hero() {
                 </span>
                 <div className="buttons">
                     <Link to="/signin" className="login">
-                        <button className="btn1">
+                        <button className="btn1 btn">
                             Start Learning !
                         </button>
                     </Link>
                     <Link to="/signup" className="signup">
-                        <button className="btn2">
+                        <button className="btn2 btn">
                             Register for free
                         </button>
                     </Link>

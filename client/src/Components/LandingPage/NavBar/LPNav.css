@@ -2,7 +2,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background: linear-gradient(90deg, #141E30 1.18%, #243b55 100%); */
     background-color: var(--darkBlue);
     height: 70px;
     padding: 30px 25px;
