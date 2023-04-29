@@ -5,10 +5,10 @@ import useDeleteCourse from "../../utils/useDeleteCourse"
 
 export default function CourseCard({ course }) {
 
-    function deleteCourseHandle() {
-        console.log("delete course", course.course_id)
-        useDeleteCourse("http://localhost:3000/courses/", course.course_id);
-    }
+    // function deleteCourseHandle() {
+    //     console.log("delete course", course.course_id)
+    //     useDeleteCourse("http://localhost:3000/courses/", course.course_id);
+    // }
 
     return <div className="course-container">
         <Card
@@ -43,11 +43,6 @@ export default function CourseCard({ course }) {
                     <Button variant='ghost' colorScheme='blue'>
                         Enroll now
                     </Button>
-                    {/* <Button variant='ghost' colorScheme='blue'
-                        onClick={
-                            () => { deleteCourseHandle(course.course_id) }}>
-                        Delete
-                    </Button> */}
                 </ButtonGroup>
             </CardFooter>
         </Card>
