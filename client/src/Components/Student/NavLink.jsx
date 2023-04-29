@@ -72,12 +72,8 @@ export default function Nav({ isChecked }) {
                                     <MenuDivider />
                                     <MenuItem>Profile</MenuItem>
                                     <MenuItem>Account Settings</MenuItem>
-                                    <MenuItem>
-                                        <Button
-                                            onClick={handleSignout}
-                                        >
-                                            Sign Out
-                                        </Button>
+                                    <MenuItem onClick={handleSignout}>
+                                        Sign Out
                                     </MenuItem>
                                 </MenuList>
                             </Menu>
