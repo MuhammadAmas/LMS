@@ -10,8 +10,15 @@ import {
   SignIn,
 } from "./Components";
 import "./App.css";
+import { useState, useEffect } from "react";
+import userSignin from "./utils/userSigninAPI";
 
 export default function App() {
+
+  const [emailHistory, setEmailHistory] = useState(localStorage.getItem("email"))
+  const [passwordHistory, setPasswordHistory] = useState(localStorage.getItem("password"));
+  const [typeHistory, setTypeHistory] = useState(localStorage.getItem("type"));
+
   return (
     <div className="app">
 
@@ -19,7 +26,11 @@ export default function App() {
         <div className="#" />
         <Routes>
           <Route path="/signUp" element={<SignUp />} />
-          <Route path="/signIn" element={<SignIn />} />
+          <Route path="/signIn" element={<SignIn
+            emailHistory={emailHistory}
+            passwordHistory={passwordHistory}
+            typeHistory={typeHistory}
+          />} />
           <Route exact path="/student/:id" element={<Student />} />
           <Route exact path="/teacher/:id" element={<Teacher />} />
           <Route exact path="/" element={<Lms />} />
