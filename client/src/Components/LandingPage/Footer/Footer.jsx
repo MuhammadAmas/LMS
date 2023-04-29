@@ -1,48 +1,125 @@
 import React from 'react'
-import { ButtonGroup, Container, IconButton, Stack, Text } from '@chakra-ui/react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { Logo } from './Logo'
+import logo from '../../../../assets/logo.png';
+import {
+    Box,
+    chakra,
+    Container,
+    Link,
+    SimpleGrid,
+    Stack,
+    Text,
+    VisuallyHidden,
+    Input,
+    IconButton,
+    useColorModeValue,
+} from '@chakra-ui/react';
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { BiMailSend } from 'react-icons/bi';
 
-export const Footer = () => (
-    <Container
-        as="footer"
-        role="contentinfo"
-        py={{
-            base: '12',
-            md: '16',
-        }}
-        maxW="100%"
-        backgroundColor="gray.100"
-    >
-        <Stack
-            spacing={{
-                base: '4',
-                md: '5',
+const SocialButton = ({ children, label, href }) => {
+    return (
+        <chakra.button
+            bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+            rounded={'full'}
+            w={8}
+            h={8}
+            cursor={'pointer'}
+            as={'a'}
+            href={href}
+            display={'inline-flex'}
+            alignItems={'center'}
+            justifyContent={'center'}
+            transition={'background 0.3s ease'}
+            _hover={{
+                bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
             }}
         >
-            <Stack justify="space-between" direction="row" align="center">
-                <Logo />
+            <VisuallyHidden>{label}</VisuallyHidden>
+            {children}
+        </chakra.button>
+    );
+};
 
-                <ButtonGroup variant="ghost">
-                    <IconButton
-                        as="a"
-                        href="#"
-                        aria-label="LinkedIn"
-                        icon={<FaLinkedin fontSize="1.25rem" />}
-                    />
-                    <IconButton as="a" href="#" aria-label="GitHub" icon={<FaGithub fontSize="1.25rem" />} />
-                    <IconButton
-                        as="a"
-                        href="#"
-                        aria-label="Twitter"
-                        icon={<FaTwitter fontSize="1.25rem" />}
-                    />
-                </ButtonGroup>
-            </Stack>
-            <Text fontSize="lg" color="subtle" textAlign='center'>
-                &copy; {new Date().getFullYear()} Acadist, Inc. All rights reserved.
-            </Text>
-        </Stack>
-    </Container>
-)
-export default Footer;
+const ListHeader = ({ children }) => {
+    return (
+        <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+            {children}
+        </Text>
+    );
+};
+
+
+export default function Footer() {
+    return (
+        <Box
+            bg={'var(--darkBlue)'}
+            color={"#fff"}
+            boxShadow={"0px 2px 6px rgba(0, 0, 0, 0.5)"}
+            margin={"40px"}
+            borderRadius={"8px"}>
+            <Container as={Stack} maxW={'6xl'} py={10}>
+                <SimpleGrid
+                    templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
+                    spacing={8}>
+                    <Stack spacing={6}>
+                        <Box style={{ width: "150px", color: "#fff" }}>
+                            <img src={logo} style={{ width: "150px", fill: "#fff" }} color={useColorModeValue('gray.700', 'white')} />
+                        </Box>
+                        <Text fontSize={'sm'}>
+                            © 2023 | All rights reserved
+                        </Text>
+                        <Stack direction={'row'} spacing={6}>
+                            <SocialButton label={'Twitter'} href={'#'}>
+                                <FaTwitter />
+                            </SocialButton>
+                            <SocialButton label={'YouTube'} href={'#'}>
+                                <FaYoutube />
+                            </SocialButton>
+                            <SocialButton label={'Instagram'} href={'#'}>
+                                <FaInstagram />
+                            </SocialButton>
+                        </Stack>
+                    </Stack>
+                    <Stack align={'flex-start'}>
+                        <ListHeader>Company</ListHeader>
+                        <Link href={'#'}>About us</Link>
+                        <Link href={'#'}>Blog</Link>
+                        <Link href={'#'}>Contact us</Link>
+                        <Link href={'#'}>Pricing</Link>
+                        <Link href={'#'}>Testimonials</Link>
+                    </Stack>
+                    <Stack align={'flex-start'}>
+                        <ListHeader>Support</ListHeader>
+                        <Link href={'#'}>Help Center</Link>
+                        <Link href={'#'}>Terms of Service</Link>
+                        <Link href={'#'}>Legal</Link>
+                        <Link href={'#'}>Privacy Policy</Link>
+                        <Link href={'#'}>Satus</Link>
+                    </Stack>
+                    <Stack align={'flex-start'}>
+                        <ListHeader>Stay up to date</ListHeader>
+                        <Stack direction={'row'}>
+                            <Input
+                                placeholder={'Your email address'}
+                                bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+                                border={0}
+                                _focus={{
+                                    bg: 'whiteAlpha.300',
+                                }}
+                            />
+                            <IconButton
+                                bg={useColorModeValue('gray.800', 'whiteAlpha.300')}
+                                color={useColorModeValue('white', 'gray.800')}
+                                _hover={{
+                                    bg: 'green.600',
+                                }}
+                                aria-label="Subscribe"
+                                icon={<BiMailSend />}
+                            />
+                        </Stack>
+                    </Stack>
+                </SimpleGrid>
+            </Container>
+        </Box>
+    );
+}

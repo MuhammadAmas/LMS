@@ -76,17 +76,17 @@ nav {
 
 .button:hover {
     color: #ffffff;
-    border: 1px solid #39bda7;
+    border: 1px solid #fff;
 }
 
 .button:hover:before {
     top: -35%;
-    background-color: #39bda7;
+    background-color: var(--darkBlue);
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 .button:hover:after {
     top: -45%;
-    background-color: #39bda7;
+    background-color: var(--darkBlue);
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }

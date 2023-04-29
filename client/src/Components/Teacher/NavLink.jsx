@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-export default function Nav({ isChecked }) {
+export default function Nav() {
     const { colorMode, toggleColorMode } = useColorMode();
 
     function handleSignout() {
@@ -29,7 +29,6 @@ export default function Nav({ isChecked }) {
         sessionStorage.clear();
         window.location.href = "/";
     }
-
     return (
         <>
             <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -72,7 +71,9 @@ export default function Nav({ isChecked }) {
                                     <MenuDivider />
                                     <MenuItem>Profile</MenuItem>
                                     <MenuItem>Account Settings</MenuItem>
-                                    <MenuItem onClick={handleSignout}>
+                                    <MenuItem
+                                        onClick={handleSignout}
+                                    >
                                         Sign Out
                                     </MenuItem>
                                 </MenuList>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Flex,
     Box,
@@ -13,33 +13,67 @@ import {
     Text,
     useColorModeValue,
     Divider,
+    InputRightElement,
     HStack,
+    InputGroup,
 } from '@chakra-ui/react';
-
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { GoogleIcon } from './ProviderIcons';
 import userSignin from '../../utils/userSigninAPI';
+import Student from '../Student/Student';
+import { Form } from 'react-router-dom';
 
 
-export default function SignIn() {
+export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
 
+    const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [isChecked, setIsChecked] = useState(false);
 
-    function handleClick() {
+    function handleCheckboxChange(e) {
+        setIsChecked(e.target.checked);
+    }
+
+    useEffect(() => {
+        if (emailHistory) {
+            handleClick(emailHistory, passwordHistory, typeHistory);
+        }
+    }, []);
+
+    function handleClick(email, password, type) {
         const user = {
             email: email,
-            password: password
+            password: password,
+            type: type
         }
         try {
             const response = userSignin("POST", "http://localhost:3000/signin", user).then((result) => {
-                if (result.type === "student")
+
+                if (result.type === "student") {
+                    user.type = "student"
                     window.location.href = "/student/" + result.user_id;
-                else
-                    window.location.href = "/teacher";
-                console.log(result.type);
+                }
+                else {
+                    user.type = "teacher"
+                    window.location.href = "/teacher/" + result.user_id;
+                }
+
             }
             );
-
+            if (isChecked) {
+                localStorage.setItem("email", user.email);
+                localStorage.setItem("password", user.password);
+                localStorage.setItem("type", user.type);
+            }
+            else {
+                localStorage.removeItem("email");
+                localStorage.removeItem("password");
+                localStorage.removeItem("type");
+                sessionStorage.setItem("email", email)
+                sessionStorage.setItem("password", password)
+                sessionStorage.setItem("type", user.type)
+            }
         }
         catch (error) {
             console.error(error);
@@ -71,21 +105,36 @@ export default function SignIn() {
                         </FormControl>
                         <FormControl id="password">
                             <FormLabel>Password</FormLabel>
-                            <Input type="password" onChange={(e) => setPassword(e.target.value)} />
+                            <InputGroup>
+                                <Input type={showPassword ? 'text' : 'password'} onChange={(e) => setPassword(e.target.value)} />
+                                <InputRightElement h={'full'}>
+                                    <Button
+                                        variant={'ghost'}
+                                        onClick={() =>
+                                            setShowPassword((showPassword) => !showPassword)
+                                        }>
+                                        {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                                    </Button>
+                                </InputRightElement>
+                            </InputGroup>
                         </FormControl>
                         <Stack spacing={7}>
                             <Stack
                                 direction={{ base: 'column', sm: 'row' }}
                                 align={'start'}
                                 justify={'space-between'}>
-                                <Checkbox>Remember me</Checkbox>
+                                <Checkbox
+                                    isChecked={isChecked}
+                                    onChange={handleCheckboxChange}
+                                >Remember me</Checkbox>
                                 <Link color={'blue.400'}>Forgot password?</Link>
                             </Stack>
+
 
                             <Button
                                 bg={'blue.400'}
                                 color={'white'}
-                                onClick={handleClick}
+                                onClick={() => { handleClick(email, password, null) }}
                                 _hover={{
                                     bg: 'blue.500',
                                 }}>
