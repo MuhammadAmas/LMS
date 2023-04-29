@@ -47,7 +47,7 @@ export default function SignUp() {
         if (newUser.type === "student")
           window.location.href = "/student/" + result.user_id;
         else
-          window.location.href = "/teacher";
+          window.location.href = "/teacher/" + result.user_id;
       }
       );
 

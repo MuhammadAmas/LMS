@@ -21,6 +21,7 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { GoogleIcon } from './ProviderIcons';
 import userSignin from '../../utils/userSigninAPI';
 import Student from '../Student/Student';
+import { Form } from 'react-router-dom';
 
 
 export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
@@ -55,7 +56,7 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                 }
                 else {
                     user.type = "teacher"
-                    window.location.href = "/teacher" + result.user_id;
+                    window.location.href = "/teacher/" + result.user_id;
                 }
 
             }
@@ -128,6 +129,7 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                                 >Remember me</Checkbox>
                                 <Link color={'blue.400'}>Forgot password?</Link>
                             </Stack>
+
 
                             <Button
                                 bg={'blue.400'}
