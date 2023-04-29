@@ -21,46 +21,61 @@ function CreateCourse() {
 
     return (
         <>
-            <Button onClick={onOpen}>Create Course</Button>
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <Button
+                    onClick={onOpen}
+                    colorScheme='green'
+                    fontSize='md'
+                    leftIcon={<i className="fas fa-plus"></i>}
+                    marginTop='30px'
+                    marginRight='20px'
+                >
+                    Create Course
+                </Button>
+            </div>
+
 
             <Modal
                 initialFocusRef={initialRef}
                 finalFocusRef={finalRef}
                 isOpen={isOpen}
                 onClose={onClose}
+                motionPreset="slideInBottom"
+                scrollBehavior="inside"
+                size="lg"
             >
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Create your account</ModalHeader>
+                    <ModalHeader>Create a new course</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody pb={6}>
-                        <FormControl>
+                        <FormControl isRequired>
                             <FormLabel>Course ID</FormLabel>
                             <Input ref={initialRef} placeholder='Course ID' />
                         </FormControl>
 
-                        <FormControl mt={4}>
+                        <FormControl mt={4} isRequired>
                             <FormLabel>Course Name</FormLabel>
                             <Input placeholder='Course name' />
                         </FormControl>
 
-                        <FormControl>
+                        <FormControl isRequired>
                             <FormLabel>Description</FormLabel>
-                            <Input ref={initialRef} placeholder='Write about the course..' />
+                            <Input ref={initialRef} placeholder='Description of the course..' />
                         </FormControl>
 
-                        <FormControl mt={4}>
+                        <FormControl mt={4} isRequired>
                             <FormLabel>Image URL</FormLabel>
-                            <Input placeholder='Give the URL of the image' 
-                            type='url' />
+                            <Input placeholder='URL for the image'
+                                type='url' />
                         </FormControl>
 
-                        <FormControl mt={4}>
+                        <FormControl mt={4} isRequired>
                             <FormLabel>Instructor Name</FormLabel>
                             <Input ref={initialRef} placeholder='Instructor Name' />
                         </FormControl>
 
-                        <FormControl mt={4}>
+                        <FormControl mt={4} isRequired>
                             <FormLabel>Date</FormLabel>
                             {/* <Input placeholder='Pick up the date' /> */}
                             <Input
