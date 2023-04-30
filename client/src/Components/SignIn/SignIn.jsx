@@ -55,7 +55,7 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                 }
                 else {
                     user.type = "teacher"
-                    window.location.href = "/teacher" + result.user_id;
+                    window.location.href = "/teacher/" + result.user_id;
                 }
 
             }
