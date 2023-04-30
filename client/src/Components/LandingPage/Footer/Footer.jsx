@@ -62,9 +62,14 @@ export default function Footer() {
                     templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
                     spacing={8}>
                     <Stack spacing={6}>
-                        <Box style={{ width: "150px", color: "#fff" }}>
-                            <img src={logo} style={{ width: "150px", fill: "#fff" }} color={useColorModeValue('gray.700', 'white')} />
-                        </Box>
+                        {/* <Box style={{
+
+                            color: "#fff",
+                        }}> */}
+                        <img src={logo}
+                            style={{ minWidth: "250px" }}
+                        />
+                        {/* </Box> */}
                         <Text fontSize={'sm'}>
                             © 2023 | All rights reserved
                         </Text>
@@ -120,6 +125,6 @@ export default function Footer() {
                     </Stack>
                 </SimpleGrid>
             </Container>
-        </Box>
+        </Box >
     );
 }

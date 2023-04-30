@@ -6,19 +6,28 @@ import Partner from "./Partner/Partner.jsx"
 import Footer from "./Footer/Footer.jsx";
 import { Divider } from "@chakra-ui/react";
 import "./Lms.css"
+import Testimonials from "./Testimonial/Testimonials.jsx";
+import ContactForm from "./Contact/ContactForm.jsx";
 
 export default function Lms() {
   return (
     <div className="lms">
       <LPNav />
-      <Hero />
-      <Divider />
+      <div
+        style={{
+          marginTop: "10em",
+        }}>
+        <Hero />
+      </div>
+      {/* <Divider /> */}
       <About />
-      <Divider />
-      <Partner />
-      <Divider />
+      {/* <Divider /> */}
+      <Testimonials />
+      {/* <Divider /> */}
+      {/* <Partner /> */}
+      {/* <Divider /> */}
+      <ContactForm/>
       <Footer />
     </div>
-
   );
 }
