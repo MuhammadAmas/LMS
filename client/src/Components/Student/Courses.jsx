@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import data from './data.json';
 import { Grid, useMediaQuery, Button } from '@chakra-ui/react';
 import CourseCard from './CourseCard';
-import useFetchData from '../../utils/useFetchCourses';
+import useFetchData from '../../utils/useFetchAllCourses';
 
 export default function Courses() {
     const [courses, setCourses] = useState();
