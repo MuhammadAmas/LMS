@@ -49,7 +49,7 @@ export default function ContactForm() {
                                         color={'var(--darkBlue)'}
                                     >Contact</Heading>
                                     <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
-                                        Fill up the form below to contact
+                                        Fill up the  to contact
                                     </Text>
                                     {/* <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                                         <VStack pl={0} spacing={3} alignItems="flex-start" marginLeft="0">
@@ -162,7 +162,7 @@ export default function ContactForm() {
                                                     variant="solid"
                                                     bg="var(--darkBlue)"
                                                     color="white"
-                                                    _hover={{}}>
+                                                    _hover={{ bg: 'var(--hoverDarkBlue)' }}>
                                                     Send Message
                                                 </Button>
                                             </FormControl>
