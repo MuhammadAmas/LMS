@@ -1,26 +1,20 @@
 import express from 'express';
 import cors from 'cors';
-import { getCourses, createCourse, deleteCourse, createUser, getUser } from './database.js'
+import { getAllCourses, getUserCourses, createCourse, deleteCourse, createUser, getUser } from './database.js'
 const app = express();
 app.use(cors())
 app.use(express.json());
 
 app.get('/courses', async (req, res) => {
-    const notes = await getCourses();
+    const notes = await getAllCourses();
     res.send(notes)
 })
 
-app.post('/courses', async (req, res) => {
-    const { course_id, course_name, instructor_name, ratings, created_date, image, description } = req.body;
-    try {
-        const course = await createCourse(course_id, course_name, instructor_name, ratings, created_date, image, description);
-        console.log("object");
-        res.status(201).send(course);
-    } catch (error) {
-        console.error(error);
-        res.status(400).send('Bad Request');
-    }
-});
+app.get('/courses/:id', async (req, res) => {
+    const { id } = req.params;
+    const course = await getUserCourses(id);
+    res.send(course);
+})
 
 app.post('/signup', async (req, res) => {
     const { username, password, type, email, } = req.body;
@@ -57,6 +51,17 @@ app.delete('/courses/:id', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.sendStatus(400).send('Bad Request');
+    }
+});
+
+app.post('/teacher', async (req, res) => {
+    const { course_id, course_name, instructor_name, image, description, ratings, user_id } = req.body;
+    try {
+        const course = await createCourse(course_id, course_name, instructor_name, image, description, ratings, user_id);
+        res.status(201).send(course);
+    } catch (error) {
+        console.error(error);
+        res.status(400).send('Bad Request');
     }
 });
 
