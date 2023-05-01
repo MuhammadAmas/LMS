@@ -96,12 +96,12 @@ export default function Hero() {
                     </Text>
                     <Stack
                         spacing={{ base: 4, sm: 6 }}
-                        direction={{ base: 'column', sm: 'row' }}>
+                        direction={{ base: 'row', sm: 'row' }}>
                         <Link to="/signin" className="login">
 
                             <Button
                                 rounded={'full'}
-                                size={'lg'}
+                                size={{ base: 'md', sm: 'lg' }}
                                 fontWeight={'normal'}
                                 px={6}
                                 colorScheme={'red'}
@@ -115,6 +115,7 @@ export default function Hero() {
 
                             <Button
                                 rounded={'full'}
+                                size={{base:'md', sm:'lg'}}
                                 size={'lg'}
                                 fontWeight={'normal'}
                                 px={6}
@@ -128,8 +129,8 @@ export default function Hero() {
                 <Flex>
                     <Image
                         alt={'Hero Image'}
-                        minWidth={'400px'}
-                        height={'400px'}
+                        maxWidth={{base: "300px", sm:'400px'}}
+                        maxHeight={{base: "300px", sm:'400px'}}
                         src={HeroPic}
                         rounded={'2xl'}
                         boxShadow={'2xl'}
@@ -165,7 +166,7 @@ export default function Hero() {
                     </Box>
                 </Flex> */}
             </Stack>
-        </Container>
+        </Container >
     );
 }
 
