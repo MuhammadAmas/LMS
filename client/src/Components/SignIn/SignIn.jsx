@@ -16,6 +16,7 @@ import {
     InputRightElement,
     HStack,
     InputGroup,
+    extendTheme,
 } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { GoogleIcon } from './ProviderIcons';
@@ -30,6 +31,16 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [isChecked, setIsChecked] = useState(false);
+
+    const theme = extendTheme({
+        colors: {
+            brand: {
+                50: "#44337A",
+                100: "#B794F4",
+                500: "#B794F4", // you need this
+            }
+        }
+    });
 
     function handleCheckboxChange(e) {
         setIsChecked(e.target.checked);
@@ -88,9 +99,23 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
             bg={useColorModeValue('gray.50', 'gray.800')}>
             <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
                 <Stack align={'center'}>
-                    <Heading fontSize={'4xl'}>Sign in to your account</Heading>
+                    <Heading fontSize={'4xl'}
+                        style={{
+                            textDecoration: "underline var(--darkBlue) 10px",
+                            textDecorationSkipInk: "none",
+                            textUnderlineOffset: "-6px"
+                        }}>Sign in to your account</Heading>
                     <Text fontSize={'lg'} color={'gray.600'}>
-                        to learn all of our free  <Link color={'blue.400'}>Courses</Link> ✌️
+                        to learn all of our free&nbsp;
+                        <Link >
+                            <Text as="span"
+                                color={'var(--darkBlue)'}
+                                _hover={{
+                                    color: 'var(--hoverDarkBlue)',
+                                }}>
+                                Courses
+                            </Text>
+                        </Link> ✌️
                     </Text>
                 </Stack>
                 <Box
@@ -126,17 +151,28 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                                 <Checkbox
                                     isChecked={isChecked}
                                     onChange={handleCheckboxChange}
+                                    colorScheme="brand"
+                                    // iconColor="var(--darkBlue)"
                                 >Remember me</Checkbox>
-                                <Link color={'blue.400'}>Forgot password?</Link>
+                                <Link>
+                                    <Text as="span"
+                                        color={'var(--darkBlue)'}
+                                        _hover={{
+                                            color: 'var(--hoverDarkBlue)',
+                                            underlineColor: "black"
+                                        }}>
+                                        Forgot password?
+                                    </Text>
+                                </Link>
                             </Stack>
 
 
                             <Button
-                                bg={'blue.400'}
+                                bg={'var(--darkBlue)'}
                                 color={'white'}
                                 onClick={() => { handleClick(email, password, null) }}
                                 _hover={{
-                                    bg: 'blue.500',
+                                    bg: 'var(--hoverDarkBlue)',
                                 }}>
                                 Sign in
                             </Button>
