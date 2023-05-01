@@ -88,7 +88,6 @@ export default function Footer() {
                     <Stack align={'flex-start'}>
                         <ListHeader>Company</ListHeader>
                         <Link href={'#'}>About us</Link>
-                        <Link href={'#'}>Blog</Link>
                         <Link href={'#'}>Contact us</Link>
                         <Link href={'#'}>Pricing</Link>
                         <Link href={'#'}>Testimonials</Link>
@@ -99,7 +98,7 @@ export default function Footer() {
                         <Link href={'#'}>Terms of Service</Link>
                         <Link href={'#'}>Legal</Link>
                         <Link href={'#'}>Privacy Policy</Link>
-                        <Link href={'#'}>Satus</Link>
+
                     </Stack>
                     <Stack align={'flex-start'}>
                         <ListHeader>Stay up to date</ListHeader>
