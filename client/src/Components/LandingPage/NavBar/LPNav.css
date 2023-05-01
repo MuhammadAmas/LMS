@@ -1,11 +1,10 @@
-nav {
+.nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background: linear-gradient(90deg, #141E30 1.18%, #243b55 100%); */
     background-color: var(--darkBlue);
     height: 70px;
-    padding: 30px 25px;
+    /* padding: 30px 25px; */
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
     z-index: 1;
     position: fixed;
@@ -13,21 +12,21 @@ nav {
 }
 
 .nav-title {
-    color: white;
-    font-size: 40px;
+    /* color: white;
+    font-size: 3rem;
     font-weight: 800;
-    font-family: 'karla';
-    padding-left: 70px;
+    font-family: 'karla'; */
+    /* padding-left: 70px; */
 }
 
-.btns {
+/* .btns {
     display: flex;
     gap: 8px;
     padding-inline-end: 20px;
-}
+} */
 
 .button {
-    display: inline-block;
+    /* display: inline-block; */
     padding: 6px 16px;
     /* border: 1px solid black; */
     border-radius: 4px;
