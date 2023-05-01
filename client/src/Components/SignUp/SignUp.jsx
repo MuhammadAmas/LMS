@@ -44,10 +44,11 @@ export default function SignUp() {
     }
     try {
       const response = userSignup("POST", "http://localhost:3000/signup", newUser).then((result) => {
-        if (newUser.type === "student")
-          window.location.href = "/student/" + result.user_id;
-        else
-          window.location.href = "/teacher/" + result.user_id;
+        // if (newUser.type === "student")
+        // window.location.href = "/student/" + result.user_id;
+        // else
+        // window.location.href = "/teacher/" + result.user_id;
+        window.location.href = "/signin";
       }
       );
 
