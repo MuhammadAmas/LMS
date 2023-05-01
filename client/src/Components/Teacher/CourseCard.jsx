@@ -28,7 +28,7 @@ import {
 import './courseCard.css'
 import useDeleteCourse from "../../utils/useDeleteCourse"
 
-export default function CourseCard({ course }) {
+export default function CourseCard({ course, userID }) {
 
     const [dialogIsOpen, setDialogIsOpen] = useState(false);
     const onDialogClose = () => setDialogIsOpen(false);
@@ -94,10 +94,11 @@ export default function CourseCard({ course }) {
                         }}>
                         Preview
                     </Button>
-                    <Button colorScheme='red'
-                        onClick={handleDeleteClick}>
-                        Delete
-                    </Button>
+                    {userID != null &&
+                        <Button colorScheme='red'
+                            onClick={handleDeleteClick}>
+                            Delete
+                        </Button>}
                 </ButtonGroup>
             </CardFooter>
         </Card>
