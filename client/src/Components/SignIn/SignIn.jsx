@@ -21,8 +21,8 @@ import {
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { GoogleIcon } from './ProviderIcons';
 import userSignin from '../../utils/userSigninAPI';
-import Student from '../Student/Student';
-import { Form } from 'react-router-dom';
+// import Student from '../Student/Student';
+// import { Form } from 'react-router-dom';
 
 
 export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
@@ -57,10 +57,10 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
             email: email,
             password: password,
             type: type
+
         }
         try {
             const response = userSignin("POST", "http://localhost:3000/signin", user).then((result) => {
-
                 if (result.type === "student") {
                     user.type = "student"
                     window.location.href = "/student/" + result.user_id;
@@ -68,6 +68,12 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                 else {
                     user.type = "teacher"
                     window.location.href = "/teacher/" + result.user_id;
+                }
+                if (isChecked) {
+                    localStorage.setItem("user_id", result.user_id)
+                }
+                else {
+                    sessionStorage.setItem("user_id", result.user_id)
                 }
 
             }
@@ -152,7 +158,7 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                                     isChecked={isChecked}
                                     onChange={handleCheckboxChange}
                                     colorScheme="brand"
-                                    // iconColor="var(--darkBlue)"
+                                // iconColor="var(--darkBlue)"
                                 >Remember me</Checkbox>
                                 <Link>
                                     <Text as="span"
