@@ -19,13 +19,18 @@ export async function deleteCourse(id) {
     const { rowCount } = await pool.query(query);
     return rowCount;
 }
-export async function getCourses() {
+export async function getAllCourses() {
     const { rows } = await pool.query('SELECT * FROM courses');
     return rows;
 }
 
-export async function createCourse(course_id, course_name, instructor_name, ratings, created_date, image, description) {
-    const { rows } = await pool.query('INSERT INTO courses (course_id, course_name, instructor_name, ratings, created_date, image, description) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', [course_id, course_name, instructor_name, ratings, created_date, image, description]);
+export async function getUserCourses(user_id) {
+    const { rows } = await pool.query('SELECT * FROM courses WHERE user_id = $1', [user_id]);
+    return rows;
+}
+
+export async function createCourse(course_id, course_name, instructor_name, image, description, ratings, user_id) {
+    const { rows } = await pool.query('INSERT INTO courses (course_id, course_name, instructor_name, image, description,ratings,user_id) VALUES ($1, $2, $3, $4, $5,$6,$7) RETURNING *', [course_id, course_name, instructor_name, image, description, ratings, user_id]);
     return rows[0];
 }
 

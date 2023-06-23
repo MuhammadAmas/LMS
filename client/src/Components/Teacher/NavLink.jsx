@@ -26,6 +26,7 @@ export default function Nav() {
         localStorage.removeItem("email");
         localStorage.removeItem("password");
         localStorage.removeItem("type");
+        localStorage.removeItem("user_id");
         sessionStorage.clear();
         window.location.href = "/";
     }
