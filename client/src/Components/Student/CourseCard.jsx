@@ -41,7 +41,10 @@ export default function CourseCard({ course }) {
     return <div className="course-container">
         <Card
             maxW='sm'
-            borderWidth='0.5px'
+            // borderWidth='0.5px'
+            sx={{
+                boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
+            }}
         >
             <CardBody>
                 <Image
@@ -62,7 +65,7 @@ export default function CourseCard({ course }) {
                     </Text>
                 </Stack>
             </CardBody>
-            <Divider />
+            {/* <Divider /> */}
             <CardFooter>
                 <ButtonGroup spacing='2'>
                     <Button variant='solid' colorScheme='blue'>
