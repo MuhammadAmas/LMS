@@ -21,10 +21,26 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 export default function Nav() {
     const { colorMode, toggleColorMode } = useColorMode();
-    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    function handleSignout() {
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+        localStorage.removeItem("type");
+        localStorage.removeItem("user_id");
+        sessionStorage.clear();
+        window.location.href = "/";
+    }
     return (
         <>
-            <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+            <Box 
+            // bg={useColorModeValue('gray.100', 'gray.900')} 
+            // px={4}
+            // sx={{
+            //     backgroundColor: 'var(--darkBlue)',
+            //     width: '100%',
+            // }}
+            className='header'
+            >
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     <Box>
                         <img src={navLogo} alt="logo" />
@@ -64,7 +80,11 @@ export default function Nav() {
                                     <MenuDivider />
                                     <MenuItem>Profile</MenuItem>
                                     <MenuItem>Account Settings</MenuItem>
-                                    <MenuItem>Sign Out</MenuItem>
+                                    <MenuItem
+                                        onClick={handleSignout}
+                                    >
+                                        Sign Out
+                                    </MenuItem>
                                 </MenuList>
                             </Menu>
                         </Stack>

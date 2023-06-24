@@ -44,10 +44,11 @@ export default function SignUp() {
     }
     try {
       const response = userSignup("POST", "http://localhost:3000/signup", newUser).then((result) => {
-        if (newUser.type === "student")
-          window.location.href = "/student/" + result.user_id;
-        else
-          window.location.href = "/teacher";
+        // if (newUser.type === "student")
+        // window.location.href = "/student/" + result.user_id;
+        // else
+        // window.location.href = "/teacher/" + result.user_id;
+        window.location.href = "/signin";
       }
       );
 
@@ -67,8 +68,13 @@ export default function SignUp() {
       bg={useColorModeValue('gray.50', 'gray.800')}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'} textAlign={'center'}>
-            Sign up
+          <Heading fontSize={'4xl'} textAlign={'center'}
+            style={{
+              textDecoration: "underline var(--darkBlue) 10px",
+              textDecorationSkipInk: "none",
+              textUnderlineOffset: "-6px"
+            }}>
+            Sign up for an account
           </Heading>
           <Text fontSize={'lg'} color={'gray.600'}>
             to start learning today for free ✌️
@@ -80,20 +86,20 @@ export default function SignUp() {
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
-            <HStack>
-              <Box>
-                <FormControl id="firstName" isRequired>
-                  <FormLabel>User Name</FormLabel>
-                  <Input type="text" onChange={(e) => setUserName(e.target.value)} />
-                </FormControl>
-              </Box>
-              {/* <Box>
+            {/* <HStack>
+              <Box> */}
+            <FormControl id="firstName" isRequired>
+              <FormLabel>User Name</FormLabel>
+              <Input type="text" onChange={(e) => setUserName(e.target.value)} />
+            </FormControl>
+            {/* </Box> */}
+            {/* <Box>
                 <FormControl id="lastName">
                   <FormLabel>Last Name</FormLabel>
                   <Input type="text" onChange={(e) => setLastName(e.target.value)} />
                 </FormControl>
               </Box> */}
-            </HStack>
+            {/* </HStack> */}
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
               <Input type="email" onChange={(e) => setEmail(e.target.value)} />
@@ -126,10 +132,10 @@ export default function SignUp() {
                 loadingText="Submitting"
                 onClick={handleSubmit}
                 size="lg"
-                bg={'blue.400'}
+                bg={'var(--darkBlue)'}
                 color={'white'}
                 _hover={{
-                  bg: 'blue.500',
+                  bg: 'var(--hoverDarkBlue)',
                 }}>
                 Sign up
               </Button>
@@ -173,7 +179,14 @@ export default function SignUp() {
               <Text align={'center'}
                 fontSize={'lg'}
               >
-                Already a user? <Link to="/signin" color={'blue.400'}>Login</Link>
+                Already a user? <Link to="/signin" >
+                  <Text color={'var(--darkBlue)'} as="span"
+                    _hover={{
+                      color: 'var(--hoverDarkBlue)',
+                    }}>
+                    Login
+                  </Text>
+                </Link>
               </Text>
             </Stack>
           </Stack>

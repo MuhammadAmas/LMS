@@ -1,6 +1,8 @@
 :root{
     --lightBlue: #39bda7;
-    --darkBlue: #090979;
+    /* --darkBlue: #090979; */
+    --hoverDarkBlue: #E53E3E;
+    --darkBlue: #f56565;
     --black: #000000;
     --white: #ffffff;
     --smokyWhite: #F5F5F5;
@@ -8,5 +10,14 @@
 
 .app{
     background-color: #F5F5F5;
+}
 
+.header{
+    background-color: var(--darkBlue);
+    color: var(--white);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+    padding: 0px 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
 }

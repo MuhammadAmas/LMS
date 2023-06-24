@@ -1,7 +1,7 @@
-import request from '../utils/getCoursesAPI';
+import request from './getAllCoursesAPI';
 
 
-export default function useFetchData(method, url) {
+export default function useFetchAllData(method, url) {
     async function fetchData() {
         const result = await request(method, url);
         const data = await result

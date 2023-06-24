@@ -26,13 +26,17 @@ export default function Nav({ isChecked }) {
         localStorage.removeItem("email");
         localStorage.removeItem("password");
         localStorage.removeItem("type");
+        localStorage.removeItem("user_id");
         sessionStorage.clear();
         window.location.href = "/";
     }
 
     return (
         <>
-            <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+            <Box 
+            className='header'
+            // bg={useColorModeValue('gray.100', 'gray.900')} px={4}
+            >
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     <Box>
                         <img src={navLogo} alt="logo" />
@@ -72,12 +76,8 @@ export default function Nav({ isChecked }) {
                                     <MenuDivider />
                                     <MenuItem>Profile</MenuItem>
                                     <MenuItem>Account Settings</MenuItem>
-                                    <MenuItem>
-                                        <Button
-                                            onClick={handleSignout}
-                                        >
-                                            Sign Out
-                                        </Button>
+                                    <MenuItem onClick={handleSignout}>
+                                        Sign Out
                                     </MenuItem>
                                 </MenuList>
                             </Menu>
