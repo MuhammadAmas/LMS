@@ -69,12 +69,6 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                     user.type = "teacher"
                     window.location.href = "/teacher/" + result.user_id;
                 }
-                if (isChecked) {
-                    localStorage.setItem("user_id", result.user_id)
-                }
-                else {
-                    sessionStorage.setItem("user_id", result.user_id)
-                }
 
             }
             );
