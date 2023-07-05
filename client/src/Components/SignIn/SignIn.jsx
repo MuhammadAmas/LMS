@@ -64,22 +64,27 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
             email: email,
             password: password,
             type: type
-
         }
         try {
             const response = userSignin("POST", "http://localhost:3000/signin", user).then((result) => {
+                console.log('nope');
+                console.log(result);
                 if (result.type === "student") {
+                    console.log('here');
                     user.type = "student"
                     window.location.href = "/student/" + result.user_id;
                 }
                 else {
+                    console.log('here1');
                     user.type = "teacher"
                     window.location.href = "/teacher/" + result.user_id;
                 }
                 if (isChecked) {
+                    console.log('here2');
                     localStorage.setItem("user_id", result.user_id)
                 }
                 else {
+                    console.log('here3');
                     sessionStorage.setItem("user_id", result.user_id)
                 }
 
