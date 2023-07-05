@@ -23,7 +23,7 @@ export default function LPNav() {
                     </button> */}
                         <Button
                             size={{ base: 'sm', sm: 'lg' }}
-                            size={'lg'}
+                            // size={'lg'}
                             fontWeight={'normal'}
                             className="button"
                             bg={'#fff'}
@@ -40,7 +40,7 @@ export default function LPNav() {
                     </button> */}
                         <Button
                             size={{ base: 'sm', sm: 'lg' }}
-                            size={'lg'}
+                            // size={'lg'}
                             fontWeight={'normal'}
                             className="button"
                             bg={'#fff'}
