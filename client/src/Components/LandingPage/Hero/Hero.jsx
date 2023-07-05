@@ -115,8 +115,8 @@ export default function Hero() {
 
                             <Button
                                 rounded={'full'}
-                                size={{base:'md', sm:'lg'}}
-                                size={'lg'}
+                                size={{ base: 'md', sm: 'lg' }}
+                                // size={'lg'}
                                 fontWeight={'normal'}
                                 px={6}
                             // leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}
@@ -129,8 +129,8 @@ export default function Hero() {
                 <Flex>
                     <Image
                         alt={'Hero Image'}
-                        maxWidth={{base: "300px", sm:'400px'}}
-                        maxHeight={{base: "300px", sm:'400px'}}
+                        maxWidth={{ base: "300px", sm: '400px' }}
+                        maxHeight={{ base: "300px", sm: '400px' }}
                         src={HeroPic}
                         rounded={'2xl'}
                         boxShadow={'2xl'}
