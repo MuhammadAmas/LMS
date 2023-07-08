@@ -41,7 +41,12 @@ export default function Courses({ userID }) {
                 })}
             </Grid>
             {showItems < data.length & courses.length > 3 && (
-                <Button onClick={handleLoadMore} mt={4} mx="auto" display="block">
+                <Button onClick={handleLoadMore} mt={4} mx="auto" display="block"
+                    style={{
+                        backgroundColor: "#f56565",
+                        color: "white",
+                    }}
+                >
                     Load More...
                 </Button>
             )}

@@ -31,7 +31,11 @@ export default function Courses() {
                 })}
             </Grid>
             {showItems < data.length && (
-                <Button onClick={handleLoadMore} mt={4} mx="auto" display="block">
+                <Button onClick={handleLoadMore} mt={4} mx="auto" display="block"
+                    style={{
+                        backgroundColor: "#f56565",
+                        color: "white",
+                    }}>
                     Load More...
                 </Button>
             )}
