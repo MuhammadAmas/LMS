@@ -16,6 +16,7 @@ import {
     AlertDialogHeader,
     AlertDialogBody,
     AlertDialogFooter,
+    Center,
 } from "@chakra-ui/react"
 import './courseCard.css'
 import useDeleteCourse from "../../utils/useDeleteCourse"
@@ -52,8 +53,11 @@ export default function CourseCard({ course }) {
                     alt={course.course_name}
                     borderRadius='lg'
                     className="xyz"
-                    maxW={220}
-
+                    maxW={200}
+                    maxH={200}
+                    minH={150}
+                    minW={150}
+                    margin='auto'
                 />
                 <Stack mt='6' spacing='3'>
                     <Heading size='md'>{course.course_name}</Heading>
@@ -66,12 +70,12 @@ export default function CourseCard({ course }) {
                 </Stack>
             </CardBody>
             {/* <Divider /> */}
-            <CardFooter>
+            <CardFooter justifyContent='center' alignItems='center'>
                 <ButtonGroup spacing='2'>
-                    <Button variant='solid' colorScheme='blue'>
+                    <Button variant='solid' colorScheme='blue' minWidth="90px">
                         Preview
                     </Button>
-                    <Button colorScheme='red'
+                    <Button colorScheme='red' minWidth="90px"
                         onClick={handleDeleteClick}
                     >
                         Enroll
