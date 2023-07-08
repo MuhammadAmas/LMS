@@ -73,9 +73,11 @@ export default function CourseCard({ course, userID }) {
                     alt={course.course_name}
                     borderRadius='lg'
                     className="xyz"
-                    maxW={220}
-                    alignSelf='center'
-                    justify='center'
+                    maxW={200}
+                    maxH={200}
+                    minH={150}
+                    minW={150}
+                    margin='auto'
                 />
                 <Stack mt='6' spacing='3'>
                     <Heading size='md'>{course.course_name}</Heading>
@@ -88,7 +90,7 @@ export default function CourseCard({ course, userID }) {
                 </Stack>
             </CardBody>
             {/* <Divider /> */}
-            <CardFooter>
+            <CardFooter justifyContent='center' alignItems='center'>
                 <ButtonGroup spacing='2'>
                     <Button variant='solid' colorScheme='blue'
                         onClick={() => {
@@ -134,8 +136,11 @@ export default function CourseCard({ course, userID }) {
                     alt={course.course_name}
                     borderRadius='lg'
                     className="xyz"
-                    maxW={220}
-                    alignSelf='center'
+                    maxW={200}
+                    maxH={200}
+                    minH={150}
+                    minW={150}
+                    margin='auto'
                 />
                 <ModalBody>
                     <Text>{course.description}</Text>

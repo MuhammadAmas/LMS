@@ -1,6 +1,7 @@
 .hero-container {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     max-width: 82%;
     margin: 0 auto;
     padding-top: 30px;
@@ -37,42 +38,42 @@
     font-family: 'karla';
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 0.5em;
-    padding: 40px;
-
-}
-
 .btn1 {
     background-color: var(--darkBlue);
     color: white;
-    text-transform: uppercase;
-    text-decoration: none;
     border: 2px solid var(--darkBlue);
-    outline: none;
-    padding: 14px;
-    font-size: 17px;
-    font-weight: bold;
-    transition: all 1s;
-    overflow: hidden;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
 
 .btn2 {
-    cursor: pointer;
-    text-transform: uppercase;
-    text-transform: uppercase;
-    text-decoration: none;
     border: 2px solid var(--darkBlue);
     color: var(--darkBlue);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
     padding: 14px;
-    font-size: 17px;
+    font-size: 1rem;
     font-weight: bold;
     transition: all 1s;
     border-radius: 6px;
+}
 
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    .hero-image {
+        max-width: 250px;
+        max-height: 250px;
+    }
 }

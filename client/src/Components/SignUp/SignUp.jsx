@@ -68,12 +68,14 @@ export default function SignUp() {
       bg={useColorModeValue('gray.50', 'gray.800')}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'} textAlign={'center'}
+          <Heading
+            fontSize={'4xl'} textAlign={'center'}
             style={{
               textDecoration: "underline var(--darkBlue) 10px",
               textDecorationSkipInk: "none",
               textUnderlineOffset: "-6px"
-            }}>
+            }}
+          >
             Sign up for an account
           </Heading>
           <Text fontSize={'lg'} color={'gray.600'}>
@@ -139,41 +141,7 @@ export default function SignUp() {
                 }}>
                 Sign up
               </Button>
-              <Stack spacing="6">
-                <HStack>
-                  <Divider />
-                  <Text fontSize="sm" whiteSpace="nowrap" color="muted">
-                    or continue with
-                  </Text>
-                  <Divider />
-                </HStack>
-              </Stack>
 
-              <Button
-                maxW="fitContent"
-                display="flex"
-                px="1.4rem"
-                py="0.5rem"
-                fontSize="0.875rem"
-                lineHeight="1.25rem"
-                fontWeight="700"
-                textAlign="center"
-                textTransform="uppercase"
-                alignItems="center"
-                borderRadius="0.5rem"
-                borderWidth="1px"
-                borderColor="rgba(0, 0, 0, 0.25)"
-                gap="0.75rem"
-                color="rgb(65, 63, 63)"
-                bg="#fff"
-                cursor="pointer"
-                transition="all .6s ease"
-                _hover={{ transform: "scale(1.02)" }}
-              >
-                <img src={GoogleIcon} alt="Google"
-                  style={{ maxWidth: "22px" }} />
-                Continue With Google
-              </Button>
             </Stack>
             <Stack pt={6}>
               <Text align={'center'}

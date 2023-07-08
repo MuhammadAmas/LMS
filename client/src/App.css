@@ -1,4 +1,4 @@
-:root{
+:root {
     --lightBlue: #39bda7;
     /* --darkBlue: #090979; */
     --hoverDarkBlue: #E53E3E;
@@ -8,11 +8,11 @@
     --smokyWhite: #F5F5F5;
 }
 
-.app{
+.app {
     background-color: #F5F5F5;
 }
 
-.header{
+.header {
     background-color: var(--darkBlue);
     color: var(--white);
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
@@ -20,4 +20,25 @@
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 1.5em;
+    height: 0.1em;
+}
+
+::-webkit-scrollbar-track {
+    background: #f56565;
+    /* border-radius: 100vw; */
+    /* margin-block: 0.5em; */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border: 0.25em solid #f56565;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E53E3E;
 }

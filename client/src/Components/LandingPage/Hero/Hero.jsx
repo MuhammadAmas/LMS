@@ -47,6 +47,7 @@ import {
 } from '@chakra-ui/react';
 
 export default function Hero() {
+
     return (
         <Container
             maxW={'7xl'}

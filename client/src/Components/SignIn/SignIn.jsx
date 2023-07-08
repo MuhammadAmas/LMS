@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
     Flex,
     Box,
@@ -7,7 +8,6 @@ import {
     Input,
     Checkbox,
     Stack,
-    Link,
     Button,
     Heading,
     Text,
@@ -180,16 +180,6 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
 
 
                                 >Remember me</Checkbox>
-                                <Link>
-                                    <Text as="span"
-                                        color={'var(--darkBlue)'}
-                                        _hover={{
-                                            color: 'var(--hoverDarkBlue)',
-                                            underlineColor: "black"
-                                        }}>
-                                        Forgot password?
-                                    </Text>
-                                </Link>
                             </Stack>
 
 
@@ -203,41 +193,20 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                                 Sign in
                             </Button>
 
-                            <Stack spacing="6">
-                                <HStack>
-                                    <Divider />
-                                    <Text fontSize="sm" whiteSpace="nowrap" color="muted">
-                                        or continue with
-                                    </Text>
-                                    <Divider />
-                                </HStack>
+                            <Stack pt={6}>
+                                <Text align={'center'}
+                                    fontSize={'lg'}
+                                >
+                                    Don't have a account? <Link to="/signup" >
+                                        <Text color={'var(--darkBlue)'} as="span"
+                                            _hover={{
+                                                color: 'var(--hoverDarkBlue)',
+                                            }}>
+                                            SignUp
+                                        </Text>
+                                    </Link>
+                                </Text>
                             </Stack>
-
-                            <Button
-                                maxW="320px"
-                                display="flex"
-                                px="1.4rem"
-                                py="0.5rem"
-                                fontSize="0.875rem"
-                                lineHeight="1.25rem"
-                                fontWeight="700"
-                                textAlign="center"
-                                textTransform="uppercase"
-                                alignItems="center"
-                                borderRadius="0.5rem"
-                                borderWidth="1px"
-                                borderColor="rgba(0, 0, 0, 0.25)"
-                                gap="0.75rem"
-                                color="rgb(65, 63, 63)"
-                                bg="#fff"
-                                cursor="pointer"
-                                transition="all .6s ease"
-                                _hover={{ transform: "scale(1.02)" }}
-                            >
-                                <GoogleIcon />
-                                Login with Google
-                            </Button>
-
                         </Stack>
                     </Stack>
                 </Box>
