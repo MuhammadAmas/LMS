@@ -30,7 +30,7 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(true);
 
     const theme = extendTheme({
         colors: {
@@ -52,22 +52,40 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
         }
     }, []);
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            handleClick(email, password, null);
+        }
+    };
+
     function handleClick(email, password, type) {
         const user = {
             email: email,
             password: password,
             type: type
-
         }
         try {
             const response = userSignin("POST", "http://localhost:3000/signin", user).then((result) => {
+                console.log('nope');
+                console.log(result);
                 if (result.type === "student") {
+                    console.log('here');
                     user.type = "student"
                     window.location.href = "/student/" + result.user_id;
                 }
                 else {
+                    console.log('here1');
                     user.type = "teacher"
                     window.location.href = "/teacher/" + result.user_id;
+                }
+                if (isChecked) {
+                    console.log('here2');
+                    localStorage.setItem("user_id", result.user_id)
+                }
+                else {
+                    console.log('here3');
+                    sessionStorage.setItem("user_id", result.user_id)
                 }
 
             }
@@ -126,12 +144,19 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                     <Stack spacing={4}>
                         <FormControl id="email">
                             <FormLabel>Email address</FormLabel>
-                            <Input type="email" onChange={(e) => setEmail(e.target.value)} />
+                            <Input type="email"
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder='Enter email'
+                            />
                         </FormControl>
                         <FormControl id="password">
                             <FormLabel>Password</FormLabel>
                             <InputGroup>
-                                <Input type={showPassword ? 'text' : 'password'} onChange={(e) => setPassword(e.target.value)} />
+                                <Input type={showPassword ? 'text' : 'password'}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    placeholder='Enter password'
+                                    autoComplete="current-password"
+                                    onKeyDown={handleKeyDown} />
                                 <InputRightElement h={'full'}>
                                     <Button
                                         variant={'ghost'}
@@ -152,7 +177,8 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
                                     isChecked={isChecked}
                                     onChange={handleCheckboxChange}
                                     colorScheme="brand"
-                                // iconColor="var(--darkBlue)"
+
+
                                 >Remember me</Checkbox>
                                 <Link>
                                     <Text as="span"
