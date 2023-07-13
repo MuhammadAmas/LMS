@@ -1,0 +1,11 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--darkBlue);
+    height: 70px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+}
