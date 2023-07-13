@@ -26,7 +26,6 @@ export default function Navbar({ isChecked }) {
     const { colorMode, toggleColorMode } = useColorMode();
 
     const email = localStorage.getItem("email") != null ? localStorage.getItem("email") : sessionStorage.getItem("email");
-    console.log(email, 'email')
     function handleSignout() {
         localStorage.removeItem("email");
         localStorage.removeItem("password");
@@ -42,20 +41,12 @@ export default function Navbar({ isChecked }) {
                 className='header Nav'
                 padding={"0 1rem"}
                 color={useColorModeValue('gray.600', 'white')}
-            // bg={useColorModeValue('gray.100', 'gray.900')} px={4}
             >
                 <Flex h={20} alignItems={'center'} justifyContent={'space-between'}>
                     <Box>
                         <img
                             src={navLogo} alt="logo" />
                     </Box>
-
-                    {/* <h1
-                        color={"#fff"}
-                        className="nav-title">
-                        Acadist
-                    </h1> */}
-
                     <Flex alignItems={'center'}>
                         <Stack direction={'row'} spacing={7}>
 
@@ -86,7 +77,7 @@ export default function Navbar({ isChecked }) {
                                     </Center>
                                     <br />
                                     <MenuDivider />
-                                    <MenuItem>Profile</MenuItem>
+                                    {/* <MenuItem>Profile</MenuItem> */}
                                     <MenuItem>Account Settings</MenuItem>
                                     <MenuItem onClick={handleSignout}>
                                         Sign Out
