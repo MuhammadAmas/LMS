@@ -46,7 +46,7 @@ function CreateCourse() {
         catch (error) {
             console.error(error);
         }
-        // console.log(newCourse);
+
     }
     return (
         <>
@@ -110,7 +110,6 @@ function CreateCourse() {
 
                         <FormControl mt={4} >
                             <FormLabel>Date</FormLabel>
-                            {/* <Input placeholder='Pick up the date' /> */}
                             <Input
                                 placeholder="Select Date and Time"
                                 size="md"

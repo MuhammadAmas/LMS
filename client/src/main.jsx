@@ -9,8 +9,6 @@ import './index.css'
 const theme = extendTheme({
   colors: {
     brand: {
-      // 50: "#44337A",
-      // 100: "#B794F4",
       500: "var(--darkBlue)",
     }
   }

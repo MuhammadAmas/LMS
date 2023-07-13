@@ -4,15 +4,12 @@ import {
     Box,
     Flex,
     Avatar,
-    Link,
     Button,
     Menu,
     MenuButton,
     MenuList,
     MenuItem,
     MenuDivider,
-    useDisclosure,
-    useColorModeValue,
     Stack,
     useColorMode,
     Center,
@@ -33,9 +30,8 @@ export default function Nav({ isChecked }) {
 
     return (
         <>
-            <Box 
-            className='header'
-            // bg={useColorModeValue('gray.100', 'gray.900')} px={4}
+            <Box
+                className='header'
             >
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     <Box>

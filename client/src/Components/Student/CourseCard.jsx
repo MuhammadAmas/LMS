@@ -5,7 +5,6 @@ import {
     Stack,
     Text,
     Image,
-    Divider,
     CardFooter,
     Button,
     ButtonGroup,
@@ -18,30 +17,22 @@ import {
     AlertDialogFooter,
 } from "@chakra-ui/react"
 import './courseCard.css'
-import useDeleteCourse from "../../utils/useDeleteCourse"
 
 export default function CourseCard({ course }) {
 
     const [isOpen, setIsOpen] = useState(false);
     const onClose = () => setIsOpen(false);
 
-    // function deleteCourseHandle() {
-    //     console.log("delete course", course.course_id)
-    //     useDeleteCourse("http://localhost:3000/courses/", course.course_id);
-    // }
-
     function handleDeleteClick() {
         setIsOpen(true);
     }
 
     function handleConfirmDelete() {
-        // deleteCourseHandle();
         onClose();
     }
     return <div className="course-container">
         <Card
             maxW='sm'
-            // borderWidth='0.5px'
             sx={{
                 boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
             }}
@@ -65,7 +56,6 @@ export default function CourseCard({ course }) {
                     </Text>
                 </Stack>
             </CardBody>
-            {/* <Divider /> */}
             <CardFooter>
                 <ButtonGroup spacing='2'>
                     <Button variant='solid' colorScheme='blue'>

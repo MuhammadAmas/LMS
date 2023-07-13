@@ -134,11 +134,11 @@ export default function GridBlurredBackdrop() {
             width={'full'}
             overflow={'hidden'}>
             <Box
-                // width={{ base: 'full', sm: 'xl', lg: 'xxl' }} 
+
                 lineHeight={1.1}
                 margin={'auto'}>
                 <chakra.h3
-                    // fontFamily={'Work Sans'}
+
                     fontWeight={'bold'}
                     fontSize={50}
                     textTransform={'uppercase'}

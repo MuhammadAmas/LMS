@@ -41,6 +41,5 @@ export async function createUser(username, password, type, email) {
 
 export async function getUser(email, password) {
     const { rows } = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-    // const user = rows[0];
     return rows[0];
 }

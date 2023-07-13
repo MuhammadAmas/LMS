@@ -5,7 +5,6 @@ import {
     Stack,
     Text,
     Image,
-    Divider,
     CardFooter,
     Button,
     ButtonGroup,
@@ -62,7 +61,6 @@ export default function CourseCard({ course, userID }) {
     return <div className="course-container">
         <Card
             maxW='sm'
-            // borderWidth='0.5px'
             sx={{
                 boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
             }}
@@ -87,7 +85,6 @@ export default function CourseCard({ course, userID }) {
                     </Text>
                 </Stack>
             </CardBody>
-            {/* <Divider /> */}
             <CardFooter>
                 <ButtonGroup spacing='2'>
                     <Button variant='solid' colorScheme='blue'
@@ -154,7 +151,5 @@ export default function CourseCard({ course, userID }) {
                 </ModalFooter>
             </ModalContent>
         </Modal>
-
-
     </div>
 }

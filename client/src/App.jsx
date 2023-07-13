@@ -4,14 +4,11 @@ import {
   Student,
   Teacher,
   Lms,
-  // NavBar,
-  Profile,
   SignUp,
   SignIn,
 } from "./Components";
 import "./App.css";
 import { useState, useEffect } from "react";
-import userSignin from "./utils/userSigninAPI";
 
 export default function App() {
 
@@ -34,7 +31,6 @@ export default function App() {
           <Route exact path="/student/:id" element={<Student />} />
           <Route exact path="/teacher/:id" element={<Teacher />} />
           <Route exact path="/" element={<Lms />} />
-          <Route exact path="/profile/:id" element={<Profile />} />
         </Routes>
       </main>
     </div>
