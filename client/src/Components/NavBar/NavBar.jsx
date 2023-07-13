@@ -18,13 +18,9 @@ import {
     useColorMode,
     Center,
 } from '@chakra-ui/react';
-import { Heading } from '@chakra-ui/react';
-
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import useDeleteAccount from '../../utils/useDeleteAccount';
 
 export default function Navbar({ isChecked }) {
-    const { colorMode, toggleColorMode } = useColorMode();
 
     const email = localStorage.getItem("email") != null ? localStorage.getItem("email") : sessionStorage.getItem("email");
     function handleSignout() {
@@ -35,12 +31,6 @@ export default function Navbar({ isChecked }) {
         sessionStorage.clear();
         window.location.href = "/";
     }
-
-    // function deleteAccountHandle() {
-    //     let userEmail = localStorage.getItem("email");
-    //     console.log("delete account", userEmail)
-    //     useDeleteAccount("http://localhost:3000/teacher/", userEmail);
-    // }
 
     function deleteAccountHandle() {
         let userEmail = localStorage.getItem("email");
