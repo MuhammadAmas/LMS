@@ -1,8 +1,6 @@
 import React from 'react';
 import Courses from './Courses';
-
 import { Divider, Heading } from '@chakra-ui/react';
-// import Nav from './NavLink';
 import './Student.css'
 import Navbar from '../NavBar/NavBar';
 

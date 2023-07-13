@@ -5,7 +5,6 @@ import {
     Stack,
     Text,
     Image,
-    Divider,
     CardFooter,
     Button,
     ButtonGroup,
@@ -16,33 +15,25 @@ import {
     AlertDialogHeader,
     AlertDialogBody,
     AlertDialogFooter,
-    Center,
 } from "@chakra-ui/react"
 import './courseCard.css'
-import useDeleteCourse from "../../utils/useDeleteCourse"
 
 export default function CourseCard({ course }) {
 
     const [isOpen, setIsOpen] = useState(false);
     const onClose = () => setIsOpen(false);
 
-    // function deleteCourseHandle() {
-    //     console.log("delete course", course.course_id)
-    //     useDeleteCourse("http://localhost:3000/courses/", course.course_id);
-    // }
 
-    function handleDeleteClick() {
+    function handleEnroll() {
         setIsOpen(true);
     }
 
-    function handleConfirmDelete() {
-        // deleteCourseHandle();
+    function handleSure() {
         onClose();
     }
     return <div className="course-container">
         <Card
             maxW='sm'
-            // borderWidth='0.5px'
             sx={{
                 boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'
             }}
@@ -69,14 +60,13 @@ export default function CourseCard({ course }) {
                     </Text>
                 </Stack>
             </CardBody>
-            {/* <Divider /> */}
             <CardFooter justifyContent='center' alignItems='center'>
                 <ButtonGroup spacing='2'>
                     <Button variant='solid' colorScheme='blue' minWidth="90px">
                         Preview
                     </Button>
-                    <Button colorScheme='red' minWidth="90px"
-                        onClick={handleDeleteClick}
+                    <Button colorScheme="red" minWidth="90px"
+                        onClick={handleEnroll}
                     >
                         Enroll
                     </Button>
@@ -86,16 +76,16 @@ export default function CourseCard({ course }) {
         <AlertDialog isOpen={isOpen} onClose={onClose}>
             <AlertDialogOverlay />
             <AlertDialogContent>
-                <AlertDialogHeader>Delete Course</AlertDialogHeader>
+                <AlertDialogHeader>Enroll Now !</AlertDialogHeader>
                 <AlertDialogBody>
-                    Are you sure you want to enroll in this course?
+                    Let's get started with this wonderful  journey.
                 </AlertDialogBody>
                 <AlertDialogFooter>
                     <Button colorScheme="gray" onClick={onClose}>
                         Cancel
                     </Button>
-                    <Button colorScheme="red" onClick={handleConfirmDelete} ml={3}>
-                        Yes
+                    <Button colorScheme="green" onClick={handleSure} ml={3}>
+                        Sure
                     </Button>
                 </AlertDialogFooter>
             </AlertDialogContent>

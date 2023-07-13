@@ -31,11 +31,14 @@ import useDeleteCourse from "../../utils/useDeleteCourse"
 export default function CourseCard({ course, userID }) {
 
     const [dialogIsOpen, setDialogIsOpen] = useState(false);
+    const [isCourseDeleted, setIsCourseDeleted] = useState(false);
+
     const onDialogClose = () => setDialogIsOpen(false);
 
     function deleteCourseHandle() {
         console.log("delete course", course.course_id)
         useDeleteCourse("http://localhost:3000/courses/", course.course_id);
+        setIsCourseDeleted(true);
     }
 
     function handleDeleteClick() {
@@ -47,6 +50,12 @@ export default function CourseCard({ course, userID }) {
         onDialogClose();
     }
 
+    useEffect(() => {
+        if (isCourseDeleted) {
+            window.location.reload();
+        }
+    }, [isCourseDeleted]);
+
     const OverlayOne = () => (
         <ModalOverlay
             bg='blackAlpha.300'
@@ -54,10 +63,8 @@ export default function CourseCard({ course, userID }) {
         />
     )
 
-
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [overlay, setOverlay] = React.useState(<OverlayOne />)
-
 
     return <div className="course-container">
         <Card
