@@ -110,6 +110,7 @@ export default function Footer() {
                                 _focus={{
                                     bg: 'whiteAlpha.300',
                                 }}
+                                sx={{ '::placeholder': { color: 'white' } }}
                             />
                             <IconButton
                                 bg={useColorModeValue('gray.800', 'whiteAlpha.300')}
