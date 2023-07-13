@@ -12,10 +12,8 @@ import {
     MenuList,
     MenuItem,
     MenuDivider,
-    useDisclosure,
     useColorModeValue,
     Stack,
-    useColorMode,
     Center,
 } from '@chakra-ui/react';
 import useDeleteAccount from '../../utils/useDeleteAccount';
