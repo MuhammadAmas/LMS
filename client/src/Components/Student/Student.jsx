@@ -1,9 +1,7 @@
 import React from 'react';
 import Courses from './Courses';
-
 import { Divider } from '@chakra-ui/react';
 import Nav from './NavLink';
-import './Student.css'
 
 export default function Student() {
     return (
