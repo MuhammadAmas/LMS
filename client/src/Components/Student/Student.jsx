@@ -2,7 +2,7 @@ import React from 'react';
 import Courses from './Courses';
 
 import { Divider, Heading } from '@chakra-ui/react';
-import Navbar from '../NavBar/NavBar';
+import Navbar from '../NavBar/NavBar.jsx';
 
 export default function Student() {
     return (
