@@ -80,8 +80,7 @@ export default function Navbar({ isChecked }) {
                                     </Center>
                                     <br />
                                     <MenuDivider />
-                                    {/* <MenuItem>Profile</MenuItem> */}
-                                    <MenuItem>Account Settings</MenuItem>
+                                    <MenuItem onClick={deleteAccountHandle}>Delete Account</MenuItem>
                                     <MenuItem onClick={handleSignout}>
                                         Sign Out
                                     </MenuItem>
