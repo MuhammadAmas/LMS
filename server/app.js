@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { getAllCourses, getUserCourses, createCourse, deleteCourse, createUser, getUser } from './database.js'
+import { getAllCourses, getUserCourses, createCourse, deleteCourse, createUser, getUser, deleteAccount } from './database.js'
 const app = express();
 app.use(cors())
 app.use(express.json());
@@ -62,6 +62,18 @@ app.post('/teacher', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(400).send('Bad Request');
+    }
+});
+
+app.delete('/teacher', async (req, res) => {
+    const { email } = req.body;
+    try {
+        const user = await deleteAccount(email);
+        res.sendStatus(201).send(user);
+    }
+    catch (error) {
+        console.error(error);
+        res.sendStatus(400).send('Bad Request');
     }
 });
 

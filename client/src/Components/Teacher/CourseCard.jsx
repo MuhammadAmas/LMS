@@ -129,7 +129,15 @@ export default function CourseCard({ course, userID }) {
         <Modal isCentered isOpen={isOpen} onClose={onClose}>
             {overlay}
             <ModalContent>
-                <ModalHeader>{course.course_name}</ModalHeader>
+                <ModalHeader textAlign='center' sx={{
+                    textShadow: '1px 1px 2px black',
+                    color: 'var(--chakra-colors-blue-300)',
+                    fontSize: '2xl',
+                    fontWeight: 'bold',
+                    letterSpacing: 'wide',
+                    textTransform: 'uppercase',
+                    marginTop: '1rem',
+                }}>{course.course_name}</ModalHeader>
                 <ModalCloseButton />
                 <Image
                     src={course.image}
@@ -143,15 +151,40 @@ export default function CourseCard({ course, userID }) {
                     margin='auto'
                 />
                 <ModalBody>
-                    <Text>{course.description}</Text>
+                    {/* <Text>{course.description}</Text> */}
                     <Text className='text'>
                         {course.description}
                     </Text>
-                    <Text className='text'>
-                        {course.instructor_name}
-                    </Text>
-                    <Text color='blue.600' fontSize='2xl'>
-                        {course.ratings}
+                    <br></br>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                        }}>
+                        <Text className='text' fontWeight='bold'>
+                            {course.instructor_name}
+                        </Text>
+                        <br></br>
+                        <Text color='blue.300' fontSize='xl' fontWeight='bold' marginRight={10}>
+                            * {course.ratings}
+                        </Text>
+                    </div>
+                    <br></br>
+                    <Text>
+                        <h3 style={{
+                            display: 'inline',
+                            fontSize: '1rem',
+                            fontWeight: 'bold',
+                        }}>Start Learning:  </h3>
+                        <a href="https://www.youtube.com" target="_blank"
+                            style={{
+                                color: 'blue',
+                                textDecoration: 'underline',
+                                fontSize: '0.9rem',
+                            }}>
+                            {course.course_name}
+                        </a>
                     </Text>
                 </ModalBody>
                 <ModalFooter>
