@@ -21,9 +21,6 @@ import {
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { GoogleIcon } from './ProviderIcons';
 import userSignin from '../../utils/userSigninAPI';
-// import Student from '../Student/Student';
-// import { Form } from 'react-router-dom';
-
 
 export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
 
@@ -67,24 +64,18 @@ export default function SignIn({ emailHistory, typeHistory, passwordHistory }) {
         }
         try {
             const response = userSignin("POST", "http://localhost:3000/signin", user).then((result) => {
-                console.log('nope');
-                console.log(result);
                 if (result.type === "student") {
-                    console.log('here');
                     user.type = "student"
                     window.location.href = "/student/" + result.user_id;
                 }
                 else {
-                    console.log('here1');
                     user.type = "teacher"
                     window.location.href = "/teacher/" + result.user_id;
                 }
                 if (isChecked) {
-                    console.log('here2');
                     localStorage.setItem("user_id", result.user_id)
                 }
                 else {
-                    console.log('here3');
                     sessionStorage.setItem("user_id", result.user_id)
                 }
 

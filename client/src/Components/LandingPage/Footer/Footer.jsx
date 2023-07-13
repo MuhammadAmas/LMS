@@ -62,14 +62,10 @@ export default function Footer() {
                     templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
                     spacing={8}>
                     <Stack spacing={6}>
-                        {/* <Box style={{
-
-                            color: "#fff",
-                        }}> */}
                         <img src={logo}
                             style={{ minWidth: "250px" }}
                         />
-                        {/* </Box> */}
+
                         <Text fontSize={'sm'}>
                             © 2023 | All rights reserved
                         </Text>
@@ -101,7 +97,7 @@ export default function Footer() {
 
                     </Stack>
                     <Stack align={'flex-start'}>
-                        <ListHeader>Stay up to date</ListHeader>
+                        <ListHeader>Subscribe & stay up to date</ListHeader>
                         <Stack direction={'row'}>
                             <Input
                                 placeholder={'Your email address'}
@@ -110,6 +106,7 @@ export default function Footer() {
                                 _focus={{
                                     bg: 'whiteAlpha.300',
                                 }}
+                                sx={{ '::placeholder': { color: 'white' } }}
                             />
                             <IconButton
                                 bg={useColorModeValue('gray.800', 'whiteAlpha.300')}
@@ -124,6 +121,6 @@ export default function Footer() {
                     </Stack>
                 </SimpleGrid>
             </Container>
-        </Box >
+        </Box>
     );
 }

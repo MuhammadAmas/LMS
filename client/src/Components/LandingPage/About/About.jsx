@@ -1,5 +1,4 @@
 import React from "react";
-// import "./About.css";
 
 export default function About() {
     return (
@@ -9,10 +8,6 @@ export default function About() {
                 textAlign: "justify",
                 margin: "auto",
                 fontSize: "1.2rem",
-                // padding: "2rem 0",
-                // display: 'flex',
-                // flexDirection: 'column',
-                // gap: "1.5rem",
             }}
         >
             <h2 className="what-text"

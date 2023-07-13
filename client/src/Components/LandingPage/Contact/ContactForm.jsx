@@ -35,7 +35,6 @@ export default function ContactForm() {
                     rounded={'2xl'}
                     boxShadow={'xl'}
                     bg="#fff"
-                    // color="white"
                     borderRadius="lg"
                     m={{ sm: 4, md: 16, lg: 10 }}
                     p={{ sm: 5, md: 5, lg: 16 }}>
@@ -51,76 +50,6 @@ export default function ContactForm() {
                                     <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
                                         Fill up the  to contact
                                     </Text>
-                                    {/* <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                                        <VStack pl={0} spacing={3} alignItems="flex-start" marginLeft="0">
-                                            <Button
-                                                size="md"
-                                                height="48px"
-                                                width="200px"
-                                                variant="ghost"
-                                                // color="#DCE2FF"
-                                                _hover={{ border: '2px solid #1C6FEB' }}
-                                                leftIcon={<MdPhone
-                                                    // color="#1970F1" 
-                                                    size="20px" />}>
-                                                +92 317 1105730
-                                            </Button>
-                                            <Button
-                                                size="md"
-                                                height="48px"
-                                                width="200px"
-                                                variant="ghost"
-                                                // color="#DCE2FF"
-                                                _hover={{ border: '2px solid #1C6FEB' }}
-                                                leftIcon={<MdEmail
-                                                    // color="#1970F1" 
-                                                    size="20px" />}>
-                                                acadist.me@gmail.com
-                                            </Button>
-                                            <Button
-                                                size="md"
-                                                height="48px"
-                                                width="200px"
-                                                variant="ghost"
-                                                // color="#DCE2FF"
-                                                _hover={{ border: '2px solid #1C6FEB' }}
-                                                leftIcon={<MdLocationOn
-                                                    // color="#1970F1"
-                                                    size="20px" />}>
-                                                Pakistan
-                                            </Button>
-                                        </VStack>
-                                    </Box>
-                                    <HStack
-                                        mt={{ lg: 10, md: 10 }}
-                                        spacing={5}
-                                        px={5}
-                                        alignItems="flex-start">
-                                        <IconButton
-                                            aria-label="facebook"
-                                            variant="ghost"
-                                            size="lg"
-                                            isRound={true}
-                                            _hover={{ bg: 'var(--darkBlue)' }}
-                                            icon={<MdFacebook size="28px" />}
-                                        />
-                                        <IconButton
-                                            aria-label="github"
-                                            variant="ghost"
-                                            size="lg"
-                                            isRound={true}
-                                            _hover={{ bg: 'var(--darkBlue)' }}
-                                            icon={<BsGithub size="28px" />}
-                                        />
-                                        <IconButton
-                                            aria-label="discord"
-                                            variant="ghost"
-                                            size="lg"
-                                            isRound={true}
-                                            _hover={{ bg: 'var(--darkBlue)' }}
-                                            icon={<BsDiscord size="28px" />}
-                                        />
-                                    </HStack> */}
                                 </Box>
                             </WrapItem>
                             <WrapItem>
