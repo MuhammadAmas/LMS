@@ -45,7 +45,12 @@ export async function getUser(email, password) {
     return rows[0];
 }
 
-export async function deleteAccount(email){
-    const {rows} = await pool.query('DELETE FROM users WHERE email = $1', [email]);
-    return rows[0];
+// export async function deleteAccount(email){
+//     const {rows} = await pool.query('DELETE FROM users WHERE email = $1', [email]);
+//     return rows[0];
+// }
+
+export async function deleteAccount(email) {
+    await pool.query('DELETE FROM users WHERE email = $1', [email]);
+    return { success: true };
 }

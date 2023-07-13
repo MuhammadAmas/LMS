@@ -37,11 +37,19 @@ export default function Navbar({ isChecked }) {
         window.location.href = "/";
     }
 
+    // function deleteAccountHandle() {
+    //     let userEmail = localStorage.getItem("email");
+    //     console.log("delete account", userEmail)
+    //     useDeleteAccount("http://localhost:3000/teacher/", userEmail);
+    // }
+
     function deleteAccountHandle() {
         let userEmail = localStorage.getItem("email");
-        console.log("delete account", userEmail)
-        useDeleteAccount("http://localhost:3000/teacher/", userEmail);
+        console.log("delete account", userEmail);
+        useDeleteAccount(userEmail);
+        window.location.href = "/";
     }
+    
 
     return (
         <>

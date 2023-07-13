@@ -65,15 +65,17 @@ app.post('/teacher', async (req, res) => {
     }
 });
 
-app.delete('/teacher', async (req, res) => {
-    const { email } = req.body;
+app.delete('/teacher/:email', async (req, res) => {
+    const { email } = req.params;
     try {
         const user = await deleteAccount(email);
-        res.sendStatus(201).send(user);
+        // res.sendStatus(201).send(user);
+        res.status(201).send(user);
     }
     catch (error) {
         console.error(error);
-        res.sendStatus(400).send('Bad Request');
+        // res.sendStatus(400).send('Bad Request');
+        res.status(400).send('Bad Request');
     }
 });
 
