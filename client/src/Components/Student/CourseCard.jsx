@@ -23,11 +23,12 @@ export default function CourseCard({ course }) {
     const [isOpen, setIsOpen] = useState(false);
     const onClose = () => setIsOpen(false);
 
-    function handleDeleteClick() {
+
+    function handleEnroll() {
         setIsOpen(true);
     }
 
-    function handleConfirmDelete() {
+    function handleSure() {
         onClose();
     }
     return <div className="course-container">
@@ -56,13 +57,13 @@ export default function CourseCard({ course }) {
                     </Text>
                 </Stack>
             </CardBody>
-            <CardFooter>
+            <CardFooter justifyContent='center' alignItems='center'>
                 <ButtonGroup spacing='2'>
                     <Button variant='solid' colorScheme='blue'>
                         Preview
                     </Button>
-                    <Button colorScheme='red'
-                        onClick={handleDeleteClick}
+                    <Button colorScheme="red" minWidth="90px"
+                        onClick={handleEnroll}
                     >
                         Enroll
                     </Button>
@@ -72,16 +73,16 @@ export default function CourseCard({ course }) {
         <AlertDialog isOpen={isOpen} onClose={onClose}>
             <AlertDialogOverlay />
             <AlertDialogContent>
-                <AlertDialogHeader>Delete Course</AlertDialogHeader>
+                <AlertDialogHeader>Enroll Now !</AlertDialogHeader>
                 <AlertDialogBody>
-                    Are you sure you want to enroll in this course?
+                    Let's get started with this wonderful  journey.
                 </AlertDialogBody>
                 <AlertDialogFooter>
                     <Button colorScheme="gray" onClick={onClose}>
                         Cancel
                     </Button>
-                    <Button colorScheme="red" onClick={handleConfirmDelete} ml={3}>
-                        Yes
+                    <Button colorScheme="green" onClick={handleSure} ml={3}>
+                        Sure
                     </Button>
                 </AlertDialogFooter>
             </AlertDialogContent>

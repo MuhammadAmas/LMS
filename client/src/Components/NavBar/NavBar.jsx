@@ -21,7 +21,6 @@ export default function Navbar({ isChecked }) {
     const { colorMode, toggleColorMode } = useColorMode();
 
     const email = localStorage.getItem("email") != null ? localStorage.getItem("email") : sessionStorage.getItem("email");
-    console.log(email, 'email')
     function handleSignout() {
         localStorage.removeItem("email");
         localStorage.removeItem("password");
@@ -43,7 +42,6 @@ export default function Navbar({ isChecked }) {
                         <img
                             src={navLogo} alt="logo" />
                     </Box>
-
                     <Flex alignItems={'center'}>
                         <Stack direction={'row'} spacing={7}>
 
@@ -74,7 +72,7 @@ export default function Navbar({ isChecked }) {
                                     </Center>
                                     <br />
                                     <MenuDivider />
-                                    <MenuItem>Profile</MenuItem>
+                                    {/* <MenuItem>Profile</MenuItem> */}
                                     <MenuItem>Account Settings</MenuItem>
                                     <MenuItem onClick={handleSignout}>
                                         Sign Out

@@ -1,8 +1,8 @@
 import React from 'react';
 import Courses from './Courses';
-
 import { Divider, Heading } from '@chakra-ui/react';
-import Navbar from '../NavBar/NavBar.jsx';
+import './Student.css'
+import Navbar from '../NavBar/NavBar';
 
 export default function Student() {
     return (

@@ -30,11 +30,14 @@ import useDeleteCourse from "../../utils/useDeleteCourse"
 export default function CourseCard({ course, userID }) {
 
     const [dialogIsOpen, setDialogIsOpen] = useState(false);
+    const [isCourseDeleted, setIsCourseDeleted] = useState(false);
+
     const onDialogClose = () => setDialogIsOpen(false);
 
     function deleteCourseHandle() {
         console.log("delete course", course.course_id)
         useDeleteCourse("http://localhost:3000/courses/", course.course_id);
+        setIsCourseDeleted(true);
     }
 
     function handleDeleteClick() {
@@ -46,6 +49,12 @@ export default function CourseCard({ course, userID }) {
         onDialogClose();
     }
 
+    useEffect(() => {
+        if (isCourseDeleted) {
+            window.location.reload();
+        }
+    }, [isCourseDeleted]);
+
     const OverlayOne = () => (
         <ModalOverlay
             bg='blackAlpha.300'
@@ -53,10 +62,8 @@ export default function CourseCard({ course, userID }) {
         />
     )
 
-
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [overlay, setOverlay] = React.useState(<OverlayOne />)
-
 
     return <div className="course-container">
         <Card
@@ -124,7 +131,15 @@ export default function CourseCard({ course, userID }) {
         <Modal isCentered isOpen={isOpen} onClose={onClose}>
             {overlay}
             <ModalContent>
-                <ModalHeader>{course.course_name}</ModalHeader>
+                <ModalHeader textAlign='center' sx={{
+                    textShadow: '1px 1px 2px black',
+                    color: 'var(--chakra-colors-blue-300)',
+                    fontSize: '2xl',
+                    fontWeight: 'bold',
+                    letterSpacing: 'wide',
+                    textTransform: 'uppercase',
+                    marginTop: '1rem',
+                }}>{course.course_name}</ModalHeader>
                 <ModalCloseButton />
                 <Image
                     src={course.image}
@@ -135,15 +150,40 @@ export default function CourseCard({ course, userID }) {
                     alignSelf='center'
                 />
                 <ModalBody>
-                    <Text>{course.description}</Text>
+                    {/* <Text>{course.description}</Text> */}
                     <Text className='text'>
                         {course.description}
                     </Text>
-                    <Text className='text'>
-                        {course.instructor_name}
-                    </Text>
-                    <Text color='blue.600' fontSize='2xl'>
-                        {course.ratings}
+                    <br></br>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                        }}>
+                        <Text className='text' fontWeight='bold'>
+                            {course.instructor_name}
+                        </Text>
+                        <br></br>
+                        <Text color='blue.300' fontSize='xl' fontWeight='bold' marginRight={10}>
+                            * {course.ratings}
+                        </Text>
+                    </div>
+                    <br></br>
+                    <Text>
+                        <h3 style={{
+                            display: 'inline',
+                            fontSize: '1rem',
+                            fontWeight: 'bold',
+                        }}>Start Learning:  </h3>
+                        <a href="https://www.youtube.com" target="_blank"
+                            style={{
+                                color: 'blue',
+                                textDecoration: 'underline',
+                                fontSize: '0.9rem',
+                            }}>
+                            {course.course_name}
+                        </a>
                     </Text>
                 </ModalBody>
                 <ModalFooter>
