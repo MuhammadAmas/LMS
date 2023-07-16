@@ -35,7 +35,7 @@ Access the LMS application in your browser.
 `client/utils/`: Contains the APIs.\
 `server/`: Contains the Express.js server application.\
 `server/database.js/`: Contains the database queries.\
-`server/app.js/`: Contains the API routes for the LMS.\
+`server/app.js/`: Contains the API routes for the LMS.
 
 ## Features
 
