@@ -4,7 +4,7 @@ This repository contains a database project for a Learning Management System (LM
 
 ## Installation
 
-Clone the repository: $ ```git clone <https://github.com/MuhammadAmas/LMS.git>```
+Clone the repository: ```git clone <https://github.com/MuhammadAmas/LMS.git>```
 Change to the project directory: cd LMS
 Install dependencies for the client: 
 ```
@@ -31,11 +31,11 @@ Access the LMS application in your browser.
 
 ## Project Structure
 
-`client/`: Contains the React.js client application.
-`client/utils/`: Contains the APIs.
-`server/`: Contains the Express.js server application.
-`server/database.js/`: Contains the database queries.
-`server/app.js/`: Contains the API routes for the LMS.
+`client/`: Contains the React.js client application.\
+`client/utils/`: Contains the APIs.\
+`server/`: Contains the Express.js server application.\
+`server/database.js/`: Contains the database queries.\
+`server/app.js/`: Contains the API routes for the LMS.\
 
 ## Features
 
