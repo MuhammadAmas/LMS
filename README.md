@@ -39,11 +39,11 @@ Access the LMS application in your browser.
 
 ## Features
 
-**User authentication and authorization.**
-**Course management, including creation, enrollment, and deletion.**
-**User profile management.**
-**Teacher dashboard for managing courses.**
-**Interactive user interface using Chakra UI components.**
+User authentication and authorization.\
+Course management, including creation, enrollment, and deletion.\
+User profile management.\
+Teacher dashboard for managing courses.\
+Interactive user interface using Chakra UI components.
 
 ## Collaborators
 
