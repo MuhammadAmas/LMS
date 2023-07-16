@@ -1,14 +1,49 @@
-## For installation run the following command
+# LMS Database Project
 
+This repository contains a database project for a Learning Management System (LMS) built using React.js, Express.js, PostgreSQL, and Chakra UI.
+
+## Installation
+
+Clone the repository: $ ```git clone <https://github.com/MuhammadAmas/LMS.git>```
+Change to the project directory: cd LMS
+Install dependencies for the client: 
 ```
+cd client
 $ npm install
 ```
 
-## To start the project, run the following command
+Install dependencies for the server: 
+```
+cd server
+$ npm install
+```
+Create a PostgreSQL database for the LMS. Checkout the Schema.sql file.
+Set up the database connection by updating the configuration file `.env` in the server directory with your PostgreSQL credentials. It must include the following:
+```
+PG_HOST='127.0.0.1'
+PG_USER='postgres'
+PG_PASSWORD=''
+PG_DATABASE='acadist' 
+PG_PORT=''
+```
+Start the development server: npm run dev
+Access the LMS application in your browser.
 
-```
-$ npm run dev
-```
+## Project Structure
+
+`client/`: Contains the React.js client application.
+`client/utils/`: Contains the APIs.
+`server/`: Contains the Express.js server application.
+`server/database.js/`: Contains the database queries.
+`server/app.js/`: Contains the API routes for the LMS.
+
+## Features
+
+**User authentication and authorization.**
+**Course management, including creation, enrollment, and deletion.**
+**User profile management.**
+**Teacher dashboard for managing courses.**
+**Interactive user interface using Chakra UI components.**
 
 ## Collaborators
 
@@ -16,6 +51,10 @@ This project was developed by the following collaborators:
 
 - **[Muhammad Amas](https://github.com/MuhammadAmas)**
 - **[Zain Asif](https://github.com/ZainAsif767)**
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
 ## License
 
