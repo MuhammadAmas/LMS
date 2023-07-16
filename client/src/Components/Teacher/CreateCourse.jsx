@@ -42,7 +42,7 @@ function CreateCourse() {
             instructor_name: instructorName,
             image: imageURL,
             description: description,
-            ratings: Math.random() * (MAX_RATING - MIN_RATING + 1) + MIN_RATING,
+            ratings: (Math.random() * (MAX_RATING - MIN_RATING + 1) + MIN_RATING).toFixed(1),
             user_id:
                 localStorage.getItem('user_id') != null
                     ? localStorage.getItem('user_id')

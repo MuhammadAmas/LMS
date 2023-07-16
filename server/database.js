@@ -16,7 +16,7 @@ export async function deleteCourse(id) {
         text: 'DELETE FROM courses WHERE course_id = $1',
         values: [id]
     };
-    const { rowCount } = await pool.query(query);
+    const { rowCount } = await pool.query(query.text, query.values);
     return rowCount;
 }
 export async function getAllCourses() {
