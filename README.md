@@ -49,18 +49,18 @@ Access the LMS application in your browser.
 
 ## Project Structure
 
-`client/`: Contains the React.js client application.
-`client/utils/`: Contains the APIs.
-`server/`: Contains the Express.js server application.
-`server/database.js/`: Contains the database queries.
+`client/`: Contains the React.js client application.\
+`client/utils/`: Contains the APIs.\
+`server/`: Contains the Express.js server application.\
+`server/database.js/`: Contains the database queries.\
 `server/app.js/`: Contains the API routes for the LMS.
 
 ## Features
 
-- User authentication and authorization.\
-- Course management, including creation, enrollment, and deletion.\
-- User profile management.\
-- Teacher dashboard for managing courses.\
+- User authentication and authorization.
+- Course management, including creation, enrollment, and deletion.
+- User profile management.
+- Teacher dashboard for managing courses.
 - Interactive user interface using Chakra UI components.
 
 ## Collaborators
