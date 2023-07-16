@@ -4,21 +4,25 @@ This repository contains a database project for a Learning Management System (LM
 
 ## Installation
 
-Clone the repository: ```git clone <https://github.com/MuhammadAmas/LMS.git>```
-Change to the project directory: cd LMS
-Install dependencies for the client: 
+Clone the repository: ```git clone <https://github.com/MuhammadAmas/LMS.git>```\
+Change to the project directory: cd LMS\
+Install dependencies for the client:
+
 ```
 cd client
-$ npm install
+npm install
 ```
 
-Install dependencies for the server: 
+Install dependencies for the server:
+
 ```
 cd server
-$ npm install
+npm install
 ```
-Create a PostgreSQL database for the LMS. Checkout the Schema.sql file.
-Set up the database connection by updating the configuration file `.env` in the server directory with your PostgreSQL credentials. It must include the following:
+
+Create a PostgreSQL database for the LMS. Checkout the [Schema.sql](https://github.com/MuhammadAmas/LMS/blob/main/server/schema.sql) file.\
+Set up the database connection by creating the `.env` configuration file in the server directory with your PostgreSQL credentials. It must include the following:
+
 ```
 PG_HOST='127.0.0.1'
 PG_USER='postgres'
@@ -26,7 +30,21 @@ PG_PASSWORD=''
 PG_DATABASE='acadist' 
 PG_PORT=''
 ```
-Start the development server: npm run dev
+
+Start the server:
+
+```
+cd server
+npm run dev
+```
+
+Start the client:
+
+```
+cd client 
+npm run dev
+```
+
 Access the LMS application in your browser.
 
 ## Project Structure
@@ -39,11 +57,11 @@ Access the LMS application in your browser.
 
 ## Features
 
-User authentication and authorization.\
-Course management, including creation, enrollment, and deletion.\
-User profile management.\
-Teacher dashboard for managing courses.\
-Interactive user interface using Chakra UI components.
+- User authentication and authorization.\
+- Course management, including creation, enrollment, and deletion.\
+- User profile management.\
+- Teacher dashboard for managing courses.\
+- Interactive user interface using Chakra UI components.
 
 ## Collaborators
 
