@@ -5,7 +5,7 @@ This repository contains a database project for a Learning Management System (LM
 ## Installation
 
 Clone the repository: ```git clone <https://github.com/MuhammadAmas/LMS.git>```\
-Change to the project directory: cd LMS\
+Change to the project directory: ```cd LMS```\
 Install dependencies for the client:
 
 ```
