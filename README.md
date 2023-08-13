@@ -32,9 +32,9 @@ Set up the database connection by creating the `.env` configuration file in the 
 ```
 PG_HOST='127.0.0.1'
 PG_USER='postgres'
-PG_PASSWORD=''
+PG_PASSWORD=''  (Your pgAdmin 4 server's password)
 PG_DATABASE='acadist' 
-PG_PORT=''
+PG_PORT=''   (The port you setup during installation. Usually its 5432)
 ```
 
 Start the server:
