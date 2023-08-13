@@ -2,11 +2,7 @@
 
 This repository contains a database project for a Learning Management System (LMS) built using React.js, Express.js, PostgreSQL, and Chakra UI.
 
-<!-- blank line -->
-<figure class="video_container">
-  <iframe src="Assets\Demo Video.mp4" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
-<!-- blank line -->
+https://github.com/MuhammadAmas/LMS/assets/84465512/da21f84f-26f0-41c5-ba79-ce7809ea8801
 
 ## Installation
 
