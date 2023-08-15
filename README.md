@@ -22,15 +22,15 @@ cd server
 npm install
 ```
 
-Create a PostgreSQL database for the LMS. Checkout the [Schema.sql](https://github.com/MuhammadAmas/LMS/blob/main/server/schema.sql) file.\
+Create a PostgreSQL database for the LMS. Check out the [Schema.sql](https://github.com/MuhammadAmas/LMS/blob/main/server/schema.sql) file.\
 Set up the database connection by creating the `.env` configuration file in the server directory with your PostgreSQL credentials. It must include the following:
 
 ```
 PG_HOST='127.0.0.1'
 PG_USER='postgres'
-PG_PASSWORD=''  (Your pgAdmin 4 server's password)
+PG_PASSWORD=''  //(Your pgAdmin 4 server's password)
 PG_DATABASE='acadist' 
-PG_PORT=''   (The port you setup during installation. Usually its 5432)
+PG_PORT=''   //(The port you setup during installation. Usually it's 5432)
 ```
 
 Start the server:
@@ -67,7 +67,7 @@ Access the LMS application in your browser.
 
 ## Collaborators
 
-This project was developed by the following collaborators:
+The following collaborators developed this project:
 
 - **[Muhammad Amas](https://github.com/MuhammadAmas)**
 - **[Zain Asif](https://github.com/ZainAsif767)**
