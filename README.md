@@ -72,7 +72,7 @@ The following collaborators developed this project:
 - **[Muhammad Amas](https://github.com/MuhammadAmas)**
 - **[Zain Asif](https://github.com/ZainAsif767)**
 
-## Contributing
+## Contributions
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
